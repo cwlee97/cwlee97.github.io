@@ -38,7 +38,7 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Autonomous Driving course" %}
-                        <li><a href="https://1stapplepie.github.io/autonomous/driving/course/Autonomous_Driving_course/" class="">데브코스 교육 내용 ({{category[1].size}})</a></li>
+                        <li><a href="https://1stapplepie.github.io/autonomous_driving_course/Autonomous_Driving_course/" class="">데브코스 교육 내용 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
