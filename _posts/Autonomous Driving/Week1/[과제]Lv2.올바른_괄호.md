@@ -1,6 +1,6 @@
 ---
 layout: single
-title: [과제]Lv2. 올바른 괄호
+title: Lv2. 올바른 괄호
 categories: Autonomous Driving course
 ---
 
