@@ -1,0 +1,51 @@
+---
+layout: single
+title: [과제]Lv2. 사탕 담기
+categories: Autonomous Driving course
+---
+
+# 문제 설명
+
+m그램(gram)을 담을 수 있는 가방에 사탕을 가득 채우는 경우의 수를 구하려 합니다. 단, 같은 사탕은 또 넣을 수 없습니다.</p>
+
+<p>가방이 감당할 수 있는 무게 m, 사탕별 무게가 담긴 배열 weights가 매개변수로 주어질 때, 가방을 정확히 m 그램으로 채우는 경우의 수를 return 하는 solution 함수를 작성해주세요.</p>
+
+## 제한 조건
+
+<ul>
+<li>m은 1,000 이상 100,000 이하인 자연수입니다.</li>
+<li>모든 사탕의 무게는 10 이상 100,000 이하인 자연수입니다.</li>
+<li>weights의 길이는 3 이상 15 이하입니다.</li>
+</ul>
+
+## 입출력 예
+<table class="table">
+        <thead><tr>
+<th>m</th>
+<th>weights</th>
+<th>return</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td>3000</td>
+<td>[500, 1500, 2500, 1000, 2000]</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+
+## 입출력 예 설명
+
+<p>사탕을 하나씩 선택해 3000 그램으로 만드는 방법은 [500, 1000, 1500], [1000, 2000], [500, 2500] 으로 3가지입니다.</p>
+
+
+```py
+from itertools import combinations
+
+def solution(m, weights):
+    answer = 0
+    for i in range(1, len(weights) + 1):
+        temp = [sum(items) for items in combinations(weights, i)]
+        answer += temp.count(m)
+    return answer
+```
