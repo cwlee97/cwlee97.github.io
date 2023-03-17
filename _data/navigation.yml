@@ -6,7 +6,7 @@ main:
     url: https://1stapplepie.github.io/programmers_py/README/
   - title: "Programmers_C++"
     url: https://1stapplepie.github.io/programmers_cpp/README/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
+  - title: "프로그래머스 자율주행 데브코스[5기]"
+    url: https://1stapplepie.github.io/autonomous/driving/course/Autonomous_Driving_course/
   # - title: "Sitemap"
   #   url: /sitemap/
