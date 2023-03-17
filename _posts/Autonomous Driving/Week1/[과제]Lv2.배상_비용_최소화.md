@@ -1,6 +1,6 @@
 ---
 layout: single
-title: [과제]Lv2. 배상 비용 최소화
+title: Lv2. 배상 비용 최소화
 categories: Autonomous Driving course
 ---
 
