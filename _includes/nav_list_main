@@ -37,7 +37,7 @@
         <span class="nav__sub-title">프로그래머스 자율주행 데브코스[5기]</span>
               <ul>
                   {% for category in site.categories %}
-                      {% if category[0] == "1주차" %}
+                      {% if category[0] == "Week1" %}
                           <li><a href="https://1stapplepie.github.io/programmers_py/README/" class="">데브코스_1주차 ({{category[1].size}})</a></li>
                       {% endif %}
                   {% endfor %}
