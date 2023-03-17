@@ -1,6 +1,6 @@
 ---
 layout: single
-title: [과제]Lv2. 사탕 담기
+title: Lv2. 사탕 담기
 categories: Autonomous Driving course
 ---
 
