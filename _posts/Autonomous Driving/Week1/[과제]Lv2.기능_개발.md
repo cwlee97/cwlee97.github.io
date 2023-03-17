@@ -1,6 +1,6 @@
 ---
 layout: single
-title: [과제]Lv2. 기능 개발
+title: Lv2. 기능 개발
 categories: Autonomous Driving course
 ---
 
