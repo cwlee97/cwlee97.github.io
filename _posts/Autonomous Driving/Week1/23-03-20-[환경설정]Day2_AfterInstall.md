@@ -1,4 +1,9 @@
-# 설치 후 작업
+---
+layout: single
+title: [Day2]설치 후 작업
+categories: Autonomous_Driving_course
+---
+
 이번에는 우분투 설치 후 쾌적한 사용을 위해 몇 가지 설치들을 진행해보고자 한다.
 1. open vm tools 설치
     * 해당 과정은 화면 크기 및 다른 설정들을 가능하게 해준다. VMWare 설치 후 우분투 창을 보면 크기 설정은 반드시 필요하다는 생각이 들 것이다. 

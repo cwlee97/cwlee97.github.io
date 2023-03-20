@@ -1,3 +1,8 @@
+---
+layout: single
+title: [Day2]환경설정
+categories: Autonomous_Driving_course
+---
 # VMWare Player 다운로드
 
 https://customerconnect.vmware.com/en/downloads/details?downloadGroup=WKST-PLAYER-1701&productId=1377&rPId=100675
@@ -23,7 +28,7 @@ http://mirror.kakao.com/
 
 이후 Create a New Virtual Machine을 클릭하고, 3번째 체크박스인 <br>I wiall install the operating system later<br>
 을 선택 후 넘어가자.<br>
-![5.png](../../../images/Autonomous_Driving/5.png)
+![5.png](../../../images/Autonomous_Driving/5.png)<br>
 ![6.png](../../../images/Autonomous_Driving/6.png)
 
 다음 화면에서는 Linux를 선택하고, version은 Ubuntu 64-bit을 선택하면 된다.<br>
@@ -35,8 +40,18 @@ http://mirror.kakao.com/
 이로서 가상 머신을 하나 만들었다. 이제 세부 설정으로 넘어가보자.<br>
 ![9.png](../../../images/Autonomous_Driving/9.png)
 
-시스템 메모리를 설정하는 부분이 처음으로 나오는데 앞서 이야기 했던 디스크 공간과 더불어 메모리 또한 프로젝트 진행에 여유가 없다면 고생하는 부분이다. 이번 설정에서는 16GB를 할당해보았다.
+시스템 메모리를 설정하는 부분이 처음으로 나오는데 앞서 이야기 했던 디스크 공간과 더불어 메모리 또한 프로젝트 진행에 여유가 없다면 고생하는 부분이다. 이번 설정에서는 16GB를 할당해보았다.<br>
 ![10.png](../../../images/Autonomous_Driving/10.png)
 
-다음은 Processors 부분인데, 체크박스 중 첫 번째 체크박스(Virtualize Intel VT-x/EPT or AMD-V/RVI)를 체크하고 넘어가도록 하자.
+다음은 Processors 부분인데, 체크박스 중 첫 번째 체크박스(Virtualize Intel VT-x/EPT or AMD-V/RVI)를 체크하고 넘어가도록 하자.<br>
 ![11.png](../../../images/Autonomous_Driving/11.png)
+
+CD/DVD 설정으로 넘어가보면, Connection 부분에 Use Physical drive가 default로 체크되어 있다. 이를 Use ISO image file를 체크한 후 다운받은 iso이미지 경로를 넣어주도록 하자.<br>
+![12.png](../../../images/Autonomous_Driving/12.png)
+
+이제 설정은 완료되었고 Play Virtual machine을 클릭하여 실행 가능하다.
+
+실행하게 되면 영어로된 우분투 설치화면을 만날 수 있는데, 좌측에서 한글 선택 후 진행하면 수월할 것이다.<br>
+![13.png](../../../images/Autonomous_Driving/13.png)
+
+이후 별다른 설정없이 설치를 진행하면 완료된다.
