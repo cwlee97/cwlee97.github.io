@@ -37,7 +37,7 @@
         <span class="nav__sub-title">프로그래머스 자율주행 데브코스[5기]</span>
             <ul>
                 {% for category in site.categories %}
-                    {% if category[0] == "Autonomous Driving course" %}
+                    {% if category[0] == "Autonomous_Driving_course" %}
                         <li><a href="https://1stapplepie.github.io/autonomous_driving_course/Autonomous_Driving_course/" class="">데브코스 교육 내용 ({{category[1].size}})</a></li>
                     {% endif %}
                 {% endfor %}
