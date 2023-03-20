@@ -275,3 +275,162 @@ int main()
     return 0;
 }
 ```
+
+# while 루프
+
+while 루프는 for 루프에서 초기화한 부분과 갱신 부분을 없애고, 루프 몸체와 조건 검사 부분만 남겨놓은 것이다.
+
+```cpp
+while (test-expression)
+    body
+```
+
+프로그램은 먼저 괄호안의 조건 검사인 표현식 test-expression을 평가한다. 표현식이 true로 평가되면 루프 몸체에 있는 구문(들)을 실행한다. for루프와 마찬가지로, 루프 몸체는 하나의 구문 또는 한 쌍의 중괄호를 묶은 블록이다. 루프 몸체의 실행이 끝나면 조건 검사 표현식으로 돌아와서 표현식을 다시 평가한다. 조건 검사 표현식이 여전히 true이면 루프 몸체를 다시 실행한다.<br>
+언젠가 루프를 끝내려면 조건 검사 표현식에 영향을 주는 것이 루프 몸체 안에 있어야 한다.<br>
+
+```cpp
+// Listing 5.13
+// while.cpp
+#include <iostream>
+const int ArSize = 20;
+int main()
+{
+    using namespace std;
+    char name[ArSize];
+
+    cout << "영문 이름을 입력하십시오: ";
+    cin >> name;
+    cout << "귀하의 영문 이름을 한 줄에 한 자씩\n";
+    cout << "ASCII 코드와 함께 표시하면 이렇습니다.\n";
+    int i = 0;
+    while (name[i] != '\0')
+    {
+        cout << name[i] << ": " << int(name[i]) << endl;
+        i++;
+    }
+    return 0;
+}
+```
+
+## 프로그램 분석
+Listing 5.13 프로그램에 사용된 while 조건 검사는 다음과 같다.
+
+```cpp
+while (name[i] != '\0')
+```
+
+이것은 배열 안에 있는 특정 문자가 널 문자인지 검사한다. 이 조건 검사가 언젠가 성공하려면 루프 몸체 안에서 i의 값을 변경하며 진행하여야 한다.
+
+```cpp
+while (name[i])
+```
+
+조건 검사식을 위와 같이 바꿔보자. name[i]가 일반적인 문자이고, 그 값이 0이 아니므로 true가 되어 조건문이 실행된다. 그러나 name[i]가 널 문자가 되면 문자 코드의 값이 0이 되어 false가 된다.
+
+# for와 while
+C++에서 for루프와 while루프는 사실상 같은 것이다. 예를 들어 다음과 같은 for 루프는
+```cpp
+for(init-expression; test-expression; update-expression;)
+{
+    statement(s)
+}
+```
+
+while 루프를 사용하여 다음과 같이 고쳐 쓸 수 있다.
+```cpp
+init-expression;
+while (test-expression)
+{
+    statement(s)
+    update-expression
+}
+```
+
+마찬가지로, 다음과 같은 while 루프는
+```cpp
+while (test-expression)
+    body
+```
+
+for 루프를 사용하여 다음과 같이 고쳐 쓸 수 있다.
+```cpp
+for ( ;test-expression;)
+    body
+```
+
+이 for루프는 세 개의 표현식을 요구한다. 그러나 비어 있는 표현식(구문)도 사용할 수 있다. 세미콜론은 반드시 2개가 필요하다. for 루프에서 조건 검사 표현식을 생략하면 true로 해석된다. 그래서 다음과 같은 루프는 영원히 멈추지 않는다.
+```cpp
+for( ; ; )
+    body
+```
+
+for 루프와 while 루프는 거의 동등하기 때문에, 어느 것을 선택하느냐는 사용자의 프로그래밍 스타일에 달려 있다. 일반적으로 for 루프는 초기값, 종료값, 카운터 갱신 방법을 한곳에 넣을 수 있기 때문에 루프를 카운트해야 할 때 주로 사용한다. while 루프는 얼마만큼 루프를 반복해야 할지 미리 알 수 없을때 사용한다.
+
+```
+루프를 설계할 때에는 다음과 같은 지침을 고려하자
+* 루프 실행을 종료시키는 조건을 파악한다.
+* 첫 번째 조건 검사를 하기 전에 그 조건을 초기화한다.
+* 조건 검사를 다시 하기 전에 매 루프 주기마다 그 조건을 갱신한다.
+```
+
+# 잠시만-시간 지연 루프
+시간을 지연시키는 동작을 프로그램 안에 넣어야 할 때가 간혹 있다. 예를 들어, 메시지를 출력한 뒤에 사용자가 그 메시지를 읽기도 전에 다른 동작으로 후딱 전환하는 프로그램이 있다고 가정해 보자. 이렇게 되면 그 메시지가 대단히 중요한데도 어물거리다가 그만 그 정보를 놓칠 수 있다. 대략 5초정도 기다렸다가 다음 동작으로 옮겨간다면 대단히 좋은 프로그램이 될 수 있을 것이다. while루프는 간단하게 이런 효과를 만들어 낸다.
+```cpp
+long wait = 0;
+while (wait < 10000)
+    wait++;
+```
+
+이 방법의 문제점은 컴퓨터 프로세서의 성능에 따라 카운트 수의 한계를 변경해주어야 한다는 것이다.
+
+ANSI C와 C++ 라이브러리는 이 용도로 사용할 수 있는 clock()이라는 함수를 제공한다. 이 함수는 프로그램이 실행된 순간부터 이 함수가 호출된 순간까지 경과한 시스템 시간을 리턴한다. 그렇지만 이 함수를 사용하는 데에는 두 가지 제약이 있다. 첫째, clock() 함수가 리턴하는 값은 초(second) 단위 시간이 아니다. 둘째, 이 함수가 리턴하는 데이터형은 어떤 시스템에서는 Long형, 다른 시스템에서는 unsigned long형, 또 다른 시스템에서 또다른 데이터형일 수 있다.
+
+clock()함수와 ctime헤더 파일을 사용하여 시간 지연 루프를 만드는 방법을 알아보자.
+```cpp
+// Listing 5.14
+//waiting.cpp
+#include <iostream>
+#include <ctime>
+int main()
+{
+    using namespace std;
+    cout << "지연 시간을 초 단위로 입력하십시오: ";
+    float secs;
+    cin >> secs;
+    clock_t delay = secs * CLOCK_PER_SEC;   // 지연 시간을 시스템 단위 클록 수로 변환
+    cout << "카운트를 시작합니다.\a\n";
+    clock_t start = clock();
+    while (clock() - start < delay) // 시간이 경과할 때까지 대기
+        ;                           // 세미콜론에 유의
+    cout << "종료\a\n";
+    return 0;
+}
+```
+
+# do while 루프
+지금까지 우리는 for 루프와 while 루프에 대해서 알아보았다. 이제는 do while 루프를 살펴볼 차례이다. do while 루프는 for 루프나 while 루프와 달리, 탈출 조건(exit-condition)루프이다. 이 말은 루프 몸체를 먼저 실행하고, 조건을 나중에 검사한다는 뜻이다. 검사하는 조건이 false로 평가되면 루프가 종료된다. 검사하는 조건이 true로 평가되면 새로운 루프 주기와 조건 검사가 시작된다. 그러므로 do while 루프는 조건을 평가하기 전에 루프 몸체를 적어도 한번 실행한다.
+```cpp
+do
+    body
+while (test-expression);
+```
+루프 몸체 부분은 단일 구문 또는 중괄호로 둘러싸인 블록이다. 일반적으로 먼저 조건을 검사하는 루프가 나중에 조건을 검사하는 루프보다 더 나은 선택이다.
+```cpp
+// Listing 5.15
+// dowhile.cpp
+#include <iostream>
+int main()
+{
+    using namespace std;
+    int n;
+
+    cout << "1부터 10까지의 수 중에서 ";
+    cout << "내가 좋아하는 수를 한번 맞추어 보십시오.\n";
+    do
+    {
+        cin >> n;
+    } while (n != 7);
+    cout << "맞았습니다. 내가 좋아하는 수는 럭키 세븐 7입니다.\n";
+    return 0;
+}
+```
