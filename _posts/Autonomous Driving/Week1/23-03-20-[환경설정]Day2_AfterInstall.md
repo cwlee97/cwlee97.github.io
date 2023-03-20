@@ -1,6 +1,6 @@
 ---
 layout: single
-title: [Day2]설치 후 작업
+title: 설치 후 작업
 categories: Autonomous_Driving_course
 ---
 

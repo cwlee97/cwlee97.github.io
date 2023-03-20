@@ -1,6 +1,6 @@
 ---
 layout: single
-title: [Day2]환경설정
+title: 환경설정
 categories: Autonomous_Driving_course
 ---
 # VMWare Player 다운로드
