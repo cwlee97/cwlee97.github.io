@@ -13,3 +13,5 @@ categories: Autonomous_Driving_course
 ## [Day2] 환경설정 - VMWare & Ubuntu
   * [VMWare & Ubuntu 18.04.6](https://1stapplepie.github.io/autonomous_driving_course/%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95-Day2_VMWare&Ubuntu18.04.5/)
   * [After Install](https://1stapplepie.github.io/autonomous_driving_course/%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95-Day2_AfterInstall/)
+## [Day3] Unix Command
+  * [Unix Command](https://1stapplepie.github.io/autonomous_driving_course/Day3_Unix_Command/)
