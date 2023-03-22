@@ -17,3 +17,6 @@ categories: Autonomous_Driving_course
   
 ## [Day3] Unix Command
   * [Unix Command](https://1stapplepie.github.io/autonomous_driving_course/Day3_Unix_Command/)
+
+## [Day4] Vim
+  * [Vim](https://1stapplepie.github.io/autonomous_driving_course/Day4_Vim/)
