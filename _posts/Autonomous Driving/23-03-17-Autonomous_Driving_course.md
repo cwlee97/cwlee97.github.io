@@ -22,4 +22,5 @@ categories: Autonomous_Driving_course
   * [Vim](https://1stapplepie.github.io/autonomous_driving_course/Day4_Vim/)
 
 ## [Day5] Linux Basics
-  * [File System]()
+  * [File System](https://1stapplepie.github.io/autonomous_driving_course/Day5_File_System/)
+  * [Package Manager](https://1stapplepie.github.io/autonomous_driving_course/Day5_Package_Manager/)
