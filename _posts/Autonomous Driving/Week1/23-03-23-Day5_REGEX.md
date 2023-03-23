@@ -120,7 +120,7 @@ categories: Autonomous_Driving_course
 
 
 4. 서브표현식
-<div class="table_wrap"><table style="border-collapse: collapse; width: 100%; height: 40px;" border="1" data-ke-align="alignLeft">
+<div class="table_wrap"><table style="border-collapse: collapse;" border="1" data-ke-align="alignLeft">
 <tbody>
 <tr style="height: 20px;">
 <td style="width: 19.6512%; height: 20px;">연산자</td>
