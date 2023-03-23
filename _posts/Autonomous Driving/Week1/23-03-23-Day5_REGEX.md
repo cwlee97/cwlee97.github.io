@@ -56,6 +56,7 @@ categories: Autonomous_Driving_course
 </tbody>
 </table>
 
+
 2. 앵커
 <div class="table_wrap"><table style="border-collapse: collapse; width: 100%;" border="1" data-ke-align="alignLeft">
 <tbody>
@@ -76,6 +77,7 @@ categories: Autonomous_Driving_course
 </tr>
 </tbody>
 </table></div>
+
 
 3. 수량사
 <div class="table_wrap"><table style="border-collapse: collapse; width: 100%;" border="1" data-ke-align="alignLeft">
@@ -115,6 +117,8 @@ categories: Autonomous_Driving_course
 </tbody>
 </table></div>
 
+
+
 4. 서브표현식
 <div class="table_wrap"><table style="border-collapse: collapse; width: 100%; height: 40px;" border="1" data-ke-align="alignLeft">
 <tbody>
@@ -142,6 +146,7 @@ categories: Autonomous_Driving_course
 </tr>
 </tbody>
 </table></div>
+
 
 6. 문자 리스트
 <div class="table_wrap"><table style="border-collapse: collapse; width: 100%;" border="1" data-ke-align="alignLeft">
@@ -199,6 +204,7 @@ categories: Autonomous_Driving_course
 </tbody>
 </table></div>
 
+
 # Perl REGEX: meta char
 <div class="table_wrap"><table style="border-collapse: collapse; width: 100%;" border="1" data-ke-align="alignLeft">
 <tbody>
@@ -240,7 +246,7 @@ categories: Autonomous_Driving_course
 </tbody>
 </table></div>
 
-<div class="table_wrap"><table style="border-collapse: collapse; width: 100%; height: 180px;" border="1" data-ke-align="alignLeft">
+<div class="table_wrap"><table style="border-collapse: collapse;" border="1" data-ke-align="alignLeft">
 <tbody>
 <tr style="height: 20px;">
 <td style="width: 8.13949%; height: 20px;">연산자</td>
