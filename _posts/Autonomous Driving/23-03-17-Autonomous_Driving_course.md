@@ -24,3 +24,4 @@ categories: Autonomous_Driving_course
 ## [Day5] Linux Basics
   * [File System](https://1stapplepie.github.io/autonomous_driving_course/Day5_File_System/)
   * [Package Manager](https://1stapplepie.github.io/autonomous_driving_course/Day5_Package_Manager/)
+  * [Network Manager](https://1stapplepie.github.io/autonomous_driving_course/Day5_Network_Manager/)
