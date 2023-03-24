@@ -259,3 +259,88 @@ $ sudo systemctl status nginx
 
 # systemd : target unit - 유닛들을 논리적으로 묶은 그룹
 * 시스템 시작 후 단계별로 기능을 묶어둠
+* 동적 상태를 기준으로 함
+* 동작 순서를 parallel하게 작동시킴<br><br>
+
+# target 종류 살펴보기
+![63.png](../../../images/Autonomous_Driving/63.png)
+<br><br>
+
+# runlevel을 대체하는 타겟
+<div class="table_wrap"><table style="border-collapse: collapse; width: 100%;" border="1" data-ke-align="alignLeft">
+<tbody>
+<tr>
+<td>타겟</td>
+<td>설명</td>
+</tr>
+<tr>
+<td>poweroff.target</td>
+<td>시스템 끄기. runlevel 0 호환모드드</td>
+</tr>
+<tr>
+<td>rescue.target</td>
+<td>복구 모드. runlevel 1 호환 모드</td>
+</tr>
+<tr>
+<td>multi-user.target</td>
+<td>멀티; 유저 모드(runlevlel 2, 3, 4를 포함)</td>
+</tr>
+<tr>
+<td>graphical.target</td>
+<td>그래피컬 모드(X윈도우, runlevel 5를 포함)</td>
+</tr>
+<tr>
+<td>reboot.target</td>
+<td>리부팅, runlevel 6와 같음</td>
+</tr>
+<tr>
+<td>shutdown.target</td>
+<td>runlevel 0와 같음</td>
+</tr>
+<tr>
+<td>halt.target</td>
+<td>시스템 끄기</td>
+</tr>
+<tr>
+<td>emergency.target</td>
+<td>응급용 콘솔, 부팅시 systemd.unit=emergency.target로 사용 가능</td>
+</tr>
+</tbody>
+</table></div>
+
+# systemd-analyze
+```
+systemd-analyze [options] [command]
+```
+* systemd의 구동을 분석한다.
+    * 각 서비스의 시간을 분석 및 시각화한다.
+* command
+    * blame: 서비스 작동에 걸린 시간별로 출력한다.
+    * critical-chain: 크리티컬 체인을 출력한다.
+    * plot, dot: 부팅 과정을 SVG 그래픽 파일로 출력한다.
+    * dump: 시스템 정보 덤프
+    * verify: unit 파일 작성/ 변경 후 검증
+```
+$ sudo systemd-analyze
+```
+![64.png](../../../images/Autonomous_Driving/64.png)
+<br><br>
+
+```
+$ sudo systemd-analyze blame    // 서비스별로 작업 시간을 알 수 있다.
+```
+![65.png](../../../images/Autonomous_Driving/65.png)
+<br><br>
+
+```
+$ sudo systemd-analyze critical-chain   // critical path 형태로 출력한다.
+```
+![66.png](../../../images/Autonomous_Driving/66.png)
+<br><br>
+
+```
+$ sudo systemd-analyze plot > svgfile.svg
+```
+![67.png](../../../images/Autonomous_Driving/67.png)
+<br><br>
+
