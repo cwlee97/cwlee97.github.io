@@ -30,3 +30,4 @@ categories: Autonomous_Driving_course
 ## [Day6] Linux Basics[2]
   * [proc_FileSystem](https://1stapplepie.github.io/autonomous_driving_course/Day6_proc_FileSystem/)
   * [Systemd](https://1stapplepie.github.io/autonomous_driving_course/Day6_systemd/)
+  * [REGEX](https://1stapplepie.github.io/autonomous_driving_course/Day6_REGEX/)
