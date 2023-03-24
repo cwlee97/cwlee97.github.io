@@ -21,8 +21,12 @@ categories: Autonomous_Driving_course
 ## [Day4] Vim
   * [Vim](https://1stapplepie.github.io/autonomous_driving_course/Day4_Vim/)
 
-## [Day5] Linux Basics
+## [Day5] Linux Basics[1]
   * [File System](https://1stapplepie.github.io/autonomous_driving_course/Day5_File_System/)
   * [Package Manager](https://1stapplepie.github.io/autonomous_driving_course/Day5_Package_Manager/)
   * [Network Manager](https://1stapplepie.github.io/autonomous_driving_course/Day5_Network_Manager/)
   * [REGEX](https://1stapplepie.github.io/autonomous_driving_course/Day5_REGEX/)
+
+## [Day6] Linux Basics[2]
+  * [proc_FileSystem]()
+  * [Systemd]()
