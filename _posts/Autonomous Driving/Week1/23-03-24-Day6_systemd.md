@@ -1,0 +1,261 @@
+---
+layout: single
+title: Systemd
+categories: Autonomous_Driving_course
+---
+
+* Lennart Poettering이 개발
+* 시스템, 서비스, 자원 설정, 이벤트를 통합 관리
+    * 데몬과 제어 통신 프로그램으로 분리되어 제작
+    * D-BUS 사용(제어를 위해 향상된 IPC, 원격 기능 제공 가능)
+    * loginctl, journalctl, systemctl 등등 제공
+    * 시스템의 기동, 종료도 모두 통합 제어
+
+# systemd : unit
+* unit 단위로 시스템 관리 - service unit, target unit, device unit ...
+* 동적 상태 - unit의 현재 상태가 동적으로 관리되므로 외부 명령어에 의존하지 않음
+* 병렬 처리 - 부팅 혹은 target 진입시 선, 후 관계에 의해 프로세스를 병렬로 실행
+
+# systemd : binaries
+* system configuration
+    * hostnamectl, localectl, timedatectl, machinectl...
+* system monitoring/querying
+    * systemd-analyze, journalctl, loginctl
+* system controlling
+
+# systemd unit 종류 확인
+![58.png](../../../images/Autonomous_Driving/58.png)
+<br><br>
+
+# systemd unit directory 확인
+```
+$ pkg-config systemd--variable=systemdsystemunitdir
+```
+필자는 여기서 pkg-config가 설치되어 있지 않아 설치 후 진행하였다.
+```
+$ sudo apt install pkg-config
+$ pkg-config systemd--variable=systemdsystemunitdir
+$ ls /lib/systemd/system
+```
+
+![59.png](../../../images/Autonomous_Driving/59.png)
+<br><br>
+
+# Units
+<div class="table_wrap"><table style="border-collapse: collapse; width: 100%;" border="1" data-ke-align="alignLeft">
+<tbody>
+<tr>
+<td>파일</td>
+<td>설명</td>
+</tr>
+<tr>
+<td>*.device</td>
+<td>시스템 장치</td>
+</tr>
+<tr>
+<td>*.mount</td>
+<td>파일 시스템 마운트 포인트</td>
+</tr>
+<tr>
+<td>*.automount</td>
+<td>파일 시스템 오토마운트 포인트</td>
+</tr>
+<tr>
+<td>*.path</td>
+<td>시스템에서 감시하는 경로</td>
+</tr>
+<tr>
+<td style="color:red">*.service</td>
+<td>열려진 파일 목록을 담고 있는 디렉토리</td>
+</tr>
+<tr>
+<td style="color:red">*.slice</td>
+<td>슬라이스</td>
+</tr>
+<tr>
+<td>*.socket</td>
+<td>시스템에서 생성하는 소켓</td>
+</tr>
+<tr>
+<td>*.swap</td>
+<td>스왑 공간</td>
+</tr>
+<tr>
+<td style="color:red">*.target</td>
+<td>unit의 논리적 그룹</td>
+</tr>
+<tr>
+<td style="color:red">*.timer</td>
+<td>타이머</td>
+</tr>
+<tr>
+<td>*.snapshot</td>
+<td>스냅샷</td>
+</tr>
+</tbody>
+</table></div>
+<br><br>
+
+# systemctl: systemd를 관리하는 매니저 프로그램
+```
+$ systemctl [command] [options]
+```
+
+# Pratice - service 유닛 목록 확인
+1. systemctl을 인수 없이 실행<br>
+    * 기본적으로 active unit만 출력되는데, -a옵션을 추가하면 모두 출력 가능
+
+![60.png](../../../images/Autonomous_Driving/60.png)
+<br><br>
+
+2. systemctl -t service 실행<br>
+
+![61.png](../../../images/Autonomous_Driving/61.png)
+<br><br>
+
+3. 화면에 대한 설명
+<div class="table_wrap"><table style="border-collapse: collapse; width: 100%;" border="1" data-ke-align="alignLeft">
+<tbody>
+<tr>
+<td>파일</td>
+<td>설명</td>
+</tr>
+<tr>
+<td>LOAD</td>
+<td>해당 유닛의 설정이 메모리에 올라갔는지를 알려준다.</td>
+</tr>
+<tr>
+<td>ACTIVE</td>
+<td>해당 유닛의 상태를 의미</td>
+</tr>
+<tr>
+<td>SUB</td>
+<td>ACTIVE 항목의 low-level작동을 의미</td>
+</tr>
+</tbody>
+</table></div>
+<br><br>
+
+4. 특정 state의 unit 검색하기
+```
+$ sudo systemctl --state=dead
+```
+
+
+# systemctl <command\> [arg...]
+<div class="table_wrap"><table style="border-collapse: collapse; width: 100%;" border="1" data-ke-align="alignLeft">
+<tbody>
+<tr>
+<td>파일</td>
+<td>설명</td>
+</tr>
+<tr>
+<td>status [NAME ...]</td>
+<td>유닛의 상태를 출력한다.</td>
+</tr>
+<tr>
+<td>start [NAME ...]</td>
+<td>유닛을 시작한다.</td>
+</tr>
+<tr>
+<td>stop [NAME ...]</td>
+<td>유닛을 정지한다.</td>
+</tr>
+<tr>
+<td>is-active [NAME ...]</td>
+<td>유닛의 active 상태를 출력한다.</td>
+</tr>
+<tr>
+<td>is-failed [NAME ...]</td>
+<td>유닛의 failed 여부를 확인한다.</td>
+</tr>
+<tr>
+<td>kill [NAME ...]</td>
+<td>시그널을 보낸다.</td>
+</tr>
+<tr>
+<td>list-unit</td>
+<td>유닛 리스트 출력</td>
+</tr>
+</tbody>
+</table></div>
+<br><br>
+
+<div class="table_wrap"><table style="border-collapse: collapse; width: 100%;" border="1" data-ke-align="alignLeft">
+<tbody>
+<tr>
+<td>파일</td>
+<td>설명</td>
+</tr>
+<tr>
+<td>reload</td>
+<td>유닛의 서비스 설정을 리로드한다.</td>
+</tr>
+<tr>
+<td>restart</td>
+<td>서비스를 재시작한다.</td>
+</tr>
+<tr>
+<td>try-restart</td>
+<td>서비스를 재시작하려고 시도한다.</td>
+</tr>
+<tr>
+<td>reload-or-restart</td>
+<td>reload를 지원하는 경우 reload를 수행하고, 지원하지 않는 경우 restart로 작동한다.</td>
+</tr>
+<tr>
+<td>reload-or-try-restart</td>
+<td>reload를 지원하는 경우 reload를 수행하고, 지원하지 않는 경우 try-restart로 작동한다.</td>
+</tr>
+</tbody>
+</table></div>
+
+<div class="table_wrap"><table style="border-collapse: collapse; width: 100%;" border="1" data-ke-align="alignLeft">
+<tbody>
+<tr>
+<td>파일</td>
+<td>설명</td>
+</tr>
+<tr>
+<td>is-enabled [NAME ...]</td>
+<td>유닛의 enabled 상태를 확인한다.</td>
+</tr>
+<tr>
+<td>disable [NAME ...]</td>
+<td>유닛을 비활성화</td>
+</tr>
+<tr>
+<td>enable [NAME ...]</td>
+<td>유닛을 활성화(--now 옵션 사용시 enable & start로 실행)</td>
+</tr>
+<tr>
+<td>preset [NAME ...]</td>
+<td>미리 설정된 기본값으로 설정</td>
+</tr>
+<tr>
+<td>reenable [NAME ...]</td>
+<td>유닛 파일을 재활성화</td>
+</tr>
+</tbody>
+</table></div>
+
+* systemd unit config. file을 리로드하는 명령은 daemon-reload이다.
+<br><br>
+
+# Practice - nginx 설치 및 유닛 실행
+```
+$ sudo apt install nginx
+$ sudo systemctl status nginx
+```
+![62.png](../../../images/Autonomous_Driving/62.png)
+<br><br>
+
+만일 inactive 상태라면,
+```
+$ sudo systemctl start nginx
+$ sudo systemctl status nginx
+```
+로 running 시켜보자.<br><br>
+
+# systemd : target unit - 유닛들을 논리적으로 묶은 그룹
+* 시스템 시작 후 단계별로 기능을 묶어둠
