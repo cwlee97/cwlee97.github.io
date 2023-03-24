@@ -19,7 +19,7 @@ categories: Autonomous_Driving_course
 * 메타 정보는 프로세스를 관리하기 위한 정보<br><br>
 
 # cd /proc , ls
-![54.png](../../../images/Autonomous_Driving/54.png)
+![54.png](../../../images/Autonomous_Driving/Week1/54.png)
 <br><br>
 
 # /proc 파헤쳐보기
@@ -27,7 +27,7 @@ categories: Autonomous_Driving_course
 $ cd 6659   // 여기서 숫자는 PID를 의미
 $ ls
 ```
-![55.png](../../../images/Autonomous_Driving/55.png)
+![55.png](../../../images/Autonomous_Driving/Week1/55.png)
 <br><br>
 
 여기서 하늘색으로 표시된 파일들은 symlink
@@ -35,7 +35,7 @@ $ ls
 ```
 $ ls -l exe
 ```
-![56.png](../../../images/Autonomous_Driving/56.png)
+![56.png](../../../images/Autonomous_Driving/Week1/56.png)
 <br><br>
 
 # 프로세스 정보 파일들
@@ -136,6 +136,6 @@ $ ls -l exe
 ```
 $ sudo cat /proc/cpuinfo
 ```
-![57.png](../../../images/Autonomous_Driving/57.png)
+![57.png](../../../images/Autonomous_Driving/Week1/57.png)
 <br><br>
 

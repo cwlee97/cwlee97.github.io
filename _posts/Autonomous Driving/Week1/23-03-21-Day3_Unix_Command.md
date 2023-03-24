@@ -97,7 +97,7 @@ categories: Autonomous_Driving_course
 * ls [-altriRr] [파일명 ...]
 * a: all, l: long, t: sort by mtime, r: reverse
 
-![14.png](../../../images/Autonomous_Driving/14.png)
+![14.png](../../../images/Autonomous_Driving/Week1/14.png)
 
 * file type: [-dbclps]
 * -: regular file, d: directory, l: symbolic link
@@ -110,7 +110,7 @@ categories: Autonomous_Driving_course
     * 파일은 666 - 022 = 644가 생성시 기본 mode가 된다.
     * umask값은 터미널에 umask입력으로 알 수 있다.<br>
 
-![15.png](../../../images/Autonomous_Driving/15.png)<br><br>
+![15.png](../../../images/Autonomous_Driving/Week1/15.png)<br><br>
 
 ## 4. mkdir - Make Directory
 * mkdir [-p] <directory name\>
@@ -143,7 +143,7 @@ categories: Autonomous_Driving_course
 * file의 meta data를 출력한다.
 * meta data: 내용이 아닌 수식하는 정보, 예를 들어 파일이름, 생성 시간, 권한 등
 
-![16.png](../../../images/Autonomous_Driving/16.png)<br><br>
+![16.png](../../../images/Autonomous_Driving/Week1/16.png)<br><br>
 
 ## bashrc 파일로 stat 살펴보기
 ```
@@ -167,7 +167,7 @@ stat ~/old_bashrc
 $ mv ~/old_bashrc ~/old_bashrc2
 ```
 
-![17.png](../../../images/Autonomous_Driving/17.png)<br><br>
+![17.png](../../../images/Autonomous_Driving/Week1/17.png)<br><br>
 
 ## 결과
 Modify값은 변함 없고, Change값만이 변화한 것을 알 수 있다.<br><br>
@@ -330,7 +330,7 @@ $ ls -li ..
 ```
 <br>
 
-![18.png](../../../images/Autonomous_Driving/18.png)<br><br>
+![18.png](../../../images/Autonomous_Driving/Week1/18.png)<br><br>
 
 
 # ln(link): symbolic
@@ -343,8 +343,8 @@ $ ls -l
 ```
 <br>
 
-![19.png](../../../images/Autonomous_Driving/19.png)<br><br>
+![19.png](../../../images/Autonomous_Driving/Week1/19.png)<br><br>
 
 
 # Practice symlink
-![20.png](../../../images/Autonomous_Driving/20.png)<br><br>
+![20.png](../../../images/Autonomous_Driving/Week1/20.png)<br><br>

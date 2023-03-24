@@ -14,21 +14,21 @@ categories: Autonomous_Driving_course
 ```
 $ dpkg -l strace
 ```
-![37.png](../../../images/Autonomous_Driving/37.png)
+![37.png](../../../images/Autonomous_Driving/Week1/37.png)
 <br><br>
 
 
 ```
 dpkg -l gcc
 ```
-![38.png](../../../images/Autonomous_Driving/38.png)
+![38.png](../../../images/Autonomous_Driving/Week1/38.png)
 <br><br>
 
 # -s 패키지 상태 확인
 ```
 dpkg -s strace
 ```
-![39.png](../../../images/Autonomous_Driving/39.png)
+![39.png](../../../images/Autonomous_Driving/Week1/39.png)
 <br><br>
 
 # -S 패키지 검색
@@ -36,7 +36,7 @@ dpkg -s strace
 dpkg -S /bin/ls
 dpkg -S '*trace'
 ```
-![40.png](../../../images/Autonomous_Driving/40.png)
+![40.png](../../../images/Autonomous_Driving/Week1/40.png)
 <br><br>
 
 # apt
@@ -47,7 +47,7 @@ dpkg -S '*trace'
 ```
 $ vim /etc/apt/source.list
 ```
-![41.png](../../../images/Autonomous_Driving/41.png)
+![41.png](../../../images/Autonomous_Driving/Week1/41.png)
 <br><br>
 
 # source.list format
@@ -70,14 +70,14 @@ deb-src [option1=value1 option2=value2] uri suite [component1] [component2]
 ```
 $ sudo select-editor
 ```
-![42.png](../../../images/Autonomous_Driving/42.png)
+![42.png](../../../images/Autonomous_Driving/Week1/42.png)
 <br><br>
 
 ```
 $ sudo apt edit-sources kakao.list
 ```
 실제 편집되는 파일: /etc/apt/sources.list.d/kakao.list<br>
-![43.png](../../../images/Autonomous_Driving/43.png)
+![43.png](../../../images/Autonomous_Driving/Week1/43.png)
 <br><br>
 
 ```

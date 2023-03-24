@@ -22,15 +22,15 @@ POSIX RE에서는 non-greedy matching 수량자를 제공하지 않는다. 따�
 
 # vim에티터를 통한 Greedy matching & Non-greedy matching
 1. vim 에디터 타이핑<br>
-![72.png](../../../images/Autonomous_Driving/72.png)
+![72.png](../../../images/Autonomous_Driving/Week1/72.png)
 <br><br>
 
 2. /<.\\+>으로 검색 - Greedy matching<br>
-![73.png](../../../images/Autonomous_Driving/73.png)
+![73.png](../../../images/Autonomous_Driving/Week1/73.png)
 <br><br>
 
 3. /<.\\{-}>으로 검색 - Non-greedy matching<br>
-![74.png](../../../images/Autonomous_Driving/74.png)
+![74.png](../../../images/Autonomous_Driving/Week1/74.png)
 <br><br>
 
 # Backslach

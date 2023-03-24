@@ -12,7 +12,7 @@ categories: Autonomous_Driving_course
 ```
 $ sudo nmcli g
 ```
-![44.png](../../../images/Autonomous_Driving/44.png)
+![44.png](../../../images/Autonomous_Driving/Week1/44.png)
 <br><br>
 * STATE: connected / asleep
 * CONNECTIVITY: full / none
@@ -21,20 +21,20 @@ $ sudo nmcli g
 * Networking 상태 조회
 * nmcli n on / off
 
-![45.png](../../../images/Autonomous_Driving/45.png)
+![45.png](../../../images/Autonomous_Driving/Week1/45.png)
 <br><br>
 
 # Network Device 확인
 ```
 $ sudo nmcli dev
 ```
-![46.png](../../../images/Autonomous_Driving/46.png)
+![46.png](../../../images/Autonomous_Driving/Week1/46.png)
 <br><br>
 
 # nmcli <g | n | r | c | d>
 * general, networking, radio, connection, device
 
-![47.png](../../../images/Autonomous_Driving/47.png)
+![47.png](../../../images/Autonomous_Driving/Week1/47.png)
 <br><br>
 
 # nmcli c[onnection] s[how]
@@ -42,14 +42,14 @@ $ sudo nmcli dev
 $ sudo nmcli connection show
 $ sudo nmcli c s
 ```
-![48.png](../../../images/Autonomous_Driving/48.png)
+![48.png](../../../images/Autonomous_Driving/Week1/48.png)
 <br><br>
 
 # nmcli c[onnection] s[how] <connection name\>
 ```
 $ sudo nmcli c s '유선 연결1'
 ```
-![49.png](../../../images/Autonomous_Driving/49.png)
+![49.png](../../../images/Autonomous_Driving/Week1/49.png)
 <br><br>
 
 # Practice - nmcli 속성 변경(유선연결1 -> ens33)
@@ -58,7 +58,7 @@ $ sudo nmcli d
 $ sudo nmcli con modify "유선 연결 1" connection.id ens33
 $ sudo nmcli c
 ```
-![50.png](../../../images/Autonomous_Driving/50.png)
+![50.png](../../../images/Autonomous_Driving/Week1/50.png)
 <br><br>
 
 # Practice - IP 변경
@@ -85,7 +85,7 @@ $ sudo nmcli c mod ens33 -ipv4.addresses [IP address]
 ```
 $ sudo apt list openssh*
 ```
-![51.png](../../../images/Autonomous_Driving/51.png)
+![51.png](../../../images/Autonomous_Driving/Week1/51.png)
 <br><br>
 
 ## [installed]표시가 없다. 설치해 주도록 하자.
@@ -97,7 +97,7 @@ $ sudo apt install openssh-server -y
 ```
 $ systemctl status sshd
 ```
-![52.png](../../../images/Autonomous_Driving/52.png)
+![52.png](../../../images/Autonomous_Driving/Week1/52.png)
 <br><br>
 
 만약 정지상태라면,
@@ -116,7 +116,7 @@ $ systemctl enable sshd
 ```
 $ sudo iptables -nL
 ```
-![53.png](../../../images/Autonomous_Driving/53.png)
+![53.png](../../../images/Autonomous_Driving/Week1/53.png)
 <br><br>
 모두 허용 되어있음을 볼 수 있다.
 

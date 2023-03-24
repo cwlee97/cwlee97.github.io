@@ -24,7 +24,7 @@ categories: Autonomous_Driving_course
 * system controlling
 
 # systemd unit 종류 확인
-![58.png](../../../images/Autonomous_Driving/58.png)
+![58.png](../../../images/Autonomous_Driving/Week1/58.png)
 <br><br>
 
 # systemd unit directory 확인
@@ -38,7 +38,7 @@ $ pkg-config systemd--variable=systemdsystemunitdir
 $ ls /lib/systemd/system
 ```
 
-![59.png](../../../images/Autonomous_Driving/59.png)
+![59.png](../../../images/Autonomous_Driving/Week1/59.png)
 <br><br>
 
 # Units
@@ -105,12 +105,12 @@ $ systemctl [command] [options]
 1. systemctl을 인수 없이 실행<br>
     * 기본적으로 active unit만 출력되는데, -a옵션을 추가하면 모두 출력 가능
 
-![60.png](../../../images/Autonomous_Driving/60.png)
+![60.png](../../../images/Autonomous_Driving/Week1/60.png)
 <br><br>
 
 2. systemctl -t service 실행<br>
 
-![61.png](../../../images/Autonomous_Driving/61.png)
+![61.png](../../../images/Autonomous_Driving/Week1/61.png)
 <br><br>
 
 3. 화면에 대한 설명
@@ -247,7 +247,7 @@ $ sudo systemctl --state=dead
 $ sudo apt install nginx
 $ sudo systemctl status nginx
 ```
-![62.png](../../../images/Autonomous_Driving/62.png)
+![62.png](../../../images/Autonomous_Driving/Week1/62.png)
 <br><br>
 
 만일 inactive 상태라면,
@@ -263,7 +263,7 @@ $ sudo systemctl status nginx
 * 동작 순서를 parallel하게 작동시킴<br><br>
 
 # target 종류 살펴보기
-![63.png](../../../images/Autonomous_Driving/63.png)
+![63.png](../../../images/Autonomous_Driving/Week1/63.png)
 <br><br>
 
 # runlevel을 대체하는 타겟
@@ -323,25 +323,25 @@ systemd-analyze [options] [command]
 ```
 $ sudo systemd-analyze
 ```
-![64.png](../../../images/Autonomous_Driving/64.png)
+![64.png](../../../images/Autonomous_Driving/Week1/64.png)
 <br><br>
 
 ```
 $ sudo systemd-analyze blame    // 서비스별로 작업 시간을 알 수 있다.
 ```
-![65.png](../../../images/Autonomous_Driving/65.png)
+![65.png](../../../images/Autonomous_Driving/Week1/65.png)
 <br><br>
 
 ```
 $ sudo systemd-analyze critical-chain   // critical path 형태로 출력한다.
 ```
-![66.png](../../../images/Autonomous_Driving/66.png)
+![66.png](../../../images/Autonomous_Driving/Week1/66.png)
 <br><br>
 
 ```
 $ sudo systemd-analyze plot > svgfile.svg
 ```
-![67.png](../../../images/Autonomous_Driving/67.png)
+![67.png](../../../images/Autonomous_Driving/Week1/67.png)
 <br><br>
 
 # Journald - systemd는 로그 관리를 위해 systemd-journald 데몬 사용
@@ -395,24 +395,24 @@ $ sudo systemd-analyze plot > svgfile.svg
 ```
 $ sudo journalctl   // 전체 정보 출력
 ```
-![68.png](../../../images/Autonomous_Driving/68.png)
+![68.png](../../../images/Autonomous_Driving/Week1/68.png)
 <br><br>
 
 ```
 $ sudo journalctl -o short  // 간략한 정보 출력
 ```
-![69.png](../../../images/Autonomous_Driving/69.png)
+![69.png](../../../images/Autonomous_Driving/Week1/69.png)
 <br><br>
 
 ```
 $ sudo journalctl -o json  // json 규격에 맞추어 출력
 ```
-![70.png](../../../images/Autonomous_Driving/70.png)
+![70.png](../../../images/Autonomous_Driving/Week1/70.png)
 <br><br>
 
 ```
 $ sudo journalctl -o verbose    // 좀 더 자세한 정보 출력
 ```
-![71.png](../../../images/Autonomous_Driving/71.png)
+![71.png](../../../images/Autonomous_Driving/Week1/71.png)
 <br><br>
 

@@ -21,7 +21,7 @@ $ sudo fdist -l (= $ sudo lsblk)
 ```
 <br>
 
-![32.png](../../../images/Autonomous_Driving/32.png)
+![32.png](../../../images/Autonomous_Driving/Week1/32.png)
 <br><br>
 
 ## Block Device
@@ -42,7 +42,7 @@ $ sudo fdisk /dev/sda
 m
 ```
 
-![33.png](../../../images/Autonomous_Driving/33.png)
+![33.png](../../../images/Autonomous_Driving/Week1/33.png)
 <br><br>
 
 # fdisk command
@@ -95,7 +95,7 @@ command: p
 command: d
 ```
 
-![34.png](../../../images/Autonomous_Driving/34.png)
+![34.png](../../../images/Autonomous_Driving/Week1/34.png)
 <br>
 
 파티션이 1개뿐이라 선택창 없이 바로 지워지는 것을 볼 수 있다.
@@ -112,7 +112,7 @@ p
 ENTER
 +4000M
 ```
-![35.png](../../../images/Autonomous_Driving/35.png)
+![35.png](../../../images/Autonomous_Driving/Week1/35.png)
 <br>
 
 연습 후 마지막 커맨드 창에서 w를 누르지 않도록 유의하자. q와 붙어있어서 무섭긴하다.
@@ -120,6 +120,6 @@ ENTER
 
 # Practice3. 종합 예제
 
-![36.png](../../../images/Autonomous_Driving/36.png)
+![36.png](../../../images/Autonomous_Driving/Week1/36.png)
 <br><br>
 
