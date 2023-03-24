@@ -275,7 +275,7 @@ $ sudo systemctl status nginx
 </tr>
 <tr>
 <td>poweroff.target</td>
-<td>시스템 끄기. runlevel 0 호환모드드</td>
+<td>시스템 끄기. runlevel 0 호환모드</td>
 </tr>
 <tr>
 <td>rescue.target</td>
@@ -342,5 +342,77 @@ $ sudo systemd-analyze critical-chain   // critical path 형태로 출력한다.
 $ sudo systemd-analyze plot > svgfile.svg
 ```
 ![67.png](../../../images/Autonomous_Driving/67.png)
+<br><br>
+
+# Journald - systemd는 로그 관리를 위해 systemd-journald 데몬 사용
+* kernel 및 userland 메시지를 통합 관리
+* /run/log/journal
+
+# journalctl [options]
+<div class="table_wrap"><table style="border-collapse: collapse; width: 100%;" border="1" data-ke-align="alignLeft">
+<tbody>
+<tr>
+<td>옵션</td>
+<td>설명</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>출력시 저널의 마지막 행으로 점프한다.</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>following 모드. 맨 끝 저널부터 시작하며 추가되는 부분을 출력</td>
+</tr>
+<tr>
+<td>-n [lines]</td>
+<td>해당 라인 수 만큼 출력한다.</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>출력이 불가능한 문자 필드까지 모두 포함한다.</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>특정 유닛에 대한 로그를 출력한다.</td>
+</tr>
+<tr>
+<td><binary path\></td>
+<td>특정 바이너리에 대한 로그를 출력한다.</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>catalog를 출력한다. 이는 저널에 대한 상세한 설명을 추가한다.</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>출력 포맷 지정. format은 여러 방식이 지원되지만, systemd 버전에 따라 조금씩 다를 수 있다.</td>
+</tr>
+</tbody>
+</table></div>
+
+
+# journalctl [-o msgtype]
+```
+$ sudo journalctl   // 전체 정보 출력
+```
+![68.png](../../../images/Autonomous_Driving/68.png)
+<br><br>
+
+```
+$ sudo journalctl -o short  // 간략한 정보 출력
+```
+![69.png](../../../images/Autonomous_Driving/69.png)
+<br><br>
+
+```
+$ sudo journalctl -o json  // json 규격에 맞추어 출력
+```
+![70.png](../../../images/Autonomous_Driving/70.png)
+<br><br>
+
+```
+$ sudo journalctl -o verbose    // 좀 더 자세한 정보 출력
+```
+![71.png](../../../images/Autonomous_Driving/71.png)
 <br><br>
 
