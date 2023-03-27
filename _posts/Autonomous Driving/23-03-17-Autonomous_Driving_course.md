@@ -34,5 +34,5 @@ categories: Autonomous_Driving_course
 
 # Week2
 ## [Day1] ROS BASIC
-  * [ROS BASIC]()
-  
+  * [ROS BASIC](https://1stapplepie.github.io/autonomous_driving_course/Day1_ROS_Basic/)
+  * [ROS Install(Melodic)](https://1stapplepie.github.io/autonomous_driving_course/Day1_ROS_Install/)
