@@ -177,7 +177,8 @@ rospy.spin()
 
 # 1:N 통신
 * Launch 파일을 변경하여 진행
-```
+
+```html
 # ~/xycar_ws/src/msg_send/launch/m_send_1n.launch
 <launch>
 	<node pkg="msg_send" type="teacher_int.py" name="teacher"/>
@@ -190,7 +191,8 @@ rospy.spin()
 ![14.png](../../../images/Autonomous_Driving/Week2/14.png)
 
 # N:1 통신
-```
+
+```html
 # ~/xycar_ws/src/msg_send/launch/m_send_n1.launch
 <launch>
 	<node pkg="msg_send" type="teacher_int.py" name="teacher1"/>
@@ -203,7 +205,8 @@ rospy.spin()
 ![15.png](../../../images/Autonomous_Driving/Week2/15.png)
 
 # N:N 통신
-```
+
+```html
 # ~/xycar_ws/src/msg_send/launch/m_send_nn.launch
 <launch>
 	<node pkg="msg_send" type="teacher_int.py" name="teacher1"/>
