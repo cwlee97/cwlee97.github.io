@@ -186,6 +186,7 @@ rospy.spin()
     <node pkg="msg_send" type="student_int.py" name="student3" output="screen"/>
 </launch>
 ```
+
 ![14.png](../../../images/Autonomous_Driving/Week2/14.png)
 
 # N:1 통신
@@ -198,6 +199,7 @@ rospy.spin()
 	<node pkg="msg_send" type="student_int.py" name="student" output="screen"/>
 </launch>
 ```
+
 ![15.png](../../../images/Autonomous_Driving/Week2/15.png)
 
 # N:N 통신
@@ -212,6 +214,7 @@ rospy.spin()
     <node pkg="msg_send" type="student_int.py" name="student3" output="screen"/>
 </launch>
 ```
+
 ![16.png](../../../images/Autonomous_Driving/Week2/16.png)
 
 # 나만의 메시지 만들기

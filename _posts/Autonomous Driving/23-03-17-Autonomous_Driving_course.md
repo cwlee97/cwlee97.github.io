@@ -37,8 +37,10 @@ categories: Autonomous_Driving_course
   * [ROS BASIC](https://1stapplepie.github.io/autonomous_driving_course/Day1_ROS_Basic/)
   * [ROS Install(Melodic)](https://1stapplepie.github.io/autonomous_driving_course/Day1_ROS_Install/)
   * [ROS Programming](https://1stapplepie.github.io/autonomous_driving_course/Day1_ROS_Programming/)
+
 ## [Day2] ROS Programming
   * [ROS Programming](https://1stapplepie.github.io/autonomous_driving_course/Day2_ROS_Programming/)
-  * [The Code Explained]()
+  * [The Code Explained](https://1stapplepie.github.io/autonomous_driving_course/Day2_The_Code_Explained/)
+
 ## [Day3] ROS Programming
 * [ROS Programming](https://1stapplepie.github.io/autonomous_driving_course/Day3_ROS_Programming/)
