@@ -44,3 +44,6 @@ categories: Autonomous_Driving_course
 
 ## [Day3] ROS Programming
 * [ROS Programming](https://1stapplepie.github.io/autonomous_driving_course/Day3_ROS_Programming/)
+
+## [Day5] Xycar ROS Package
+* [Xycar ROS Package]()
