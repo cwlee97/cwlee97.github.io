@@ -47,3 +47,8 @@ categories: Autonomous_Driving_course
 
 ## [Day5] Xycar ROS Package
 * [Xycar ROS Package](https://1stapplepie.github.io/autonomous_driving_course/Day5_xycar_ROS_Package/)
+* [코딩테스트 문제 풀이](https://1stapplepie.github.io/autonomous_driving_course/Day5_Test/)
+
+# Week3
+## [Day1] Xycar sensor
+* [Xycar sensor](https://1stapplepie.github.io/autonomous_driving_course/Day1_xycar_sensor/)
