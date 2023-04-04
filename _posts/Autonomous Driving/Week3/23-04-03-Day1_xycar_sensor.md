@@ -288,38 +288,37 @@ if __name__ == "__main__":
 # ~/xycar_ws/src/rviz_imu/src/imu_generator.py
 #! /usr/bin/env python
 
-import rospy, math, os
+import rospy, math, os, rospkg  # txt파일을 읽어오기 위한os, 프로그래밍을 위한여러 모듈 import
 from sensor_msgs.msg import Imu
+from tf.transformations import quaternion_from_euler    # quaternion값을 읽기 쉽도록 euler로 변환해주는 모듈
 
-from tf.transformations import euler_from_quaternion
-
+# 노드 선언, Imu 타입의 토픽 정의
 rospy.init_node("imu_generator")
-rospy.Publisher("imu", Imu, queue_size = 1)
+pub = rospy.Publisher("imu", Imu, queue_size = 1)
 
-# imu_data.txt 파일에서 한 줄씩 읽어다가
-file_name = "imu_data.txt"
-file_path = rospkg.RosPack().get_path('rviz_imu') + "/src/" + file_name
-with open(file_path, 'r', encoding = "UTF-8") as f:
-        lines = f.read()
-        f.close()
-
-# Roll, Yaw, Pitch 숫자값 추출
+# txt파일 데이터를 저장할 list 생성
 data = []
+
+# rospkg의 함수들을 활용해 txt파일을 읽어옴
+path = rospkg.RosPack().get_path('rviz_imu') + "/src/imu_data.txt"
+f = file(path, "r")
+lines = f.readlines()
+
+# 라인별로 rolll, pitch, yaw값을 읽어와 data에 저장
 for line in lines:
-    tmp = lise.split(",")
+    tmp = line.split(",")
     extract = []
     for i in tmp:
-        extract.append(float(i.split(":"
-        )[1]))
+        extract.append(float(i.split(":")[1]))
     data.append(extract)
 
-# 토픽에 담아 밖으로 Publish
-msg = imu()
+msg = Imu()
 msg.header.frame_id = 'map'
 
 r = rospy.Rate(10)
 seq = 0
 
+# 데이터 Publish
 for j in range(len(data)):
     msg_data = quaternion_from_euler(data[j][0], data[j][1], data[j][2])
 
@@ -330,7 +329,7 @@ for j in range(len(data)):
 
     msg.header.stamp = rospy.Time.now()
     msg.header.seq = seq
-    seq += 1
+    seq = seq + 1
 
     pub.publish(msg)
     r.sleep()
@@ -344,3 +343,9 @@ $ roslaunch rviz_imu imu_generator.launch
 $ rostopic echo /imu
 ```
 
+![5.png](../../../images/Autonomous_Driving/Week3/5.png)
+<br>
+
+## 결과 영상
+![5.gif](../../../images/Autonomous_Driving/Week3/5.png)
+<br>
