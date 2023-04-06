@@ -174,20 +174,22 @@ from sensor_msgs.msg import LaserScan
 from sensor_msgs.msg import Range
 from std_msgs.msg import Header
 
-lidar_points = None
+lidar_points = None # callback함수로부터 데이터를 담을 변수 선언
 
 def lidar_callback(data):
     global lidar_points
-    lidar_points = data.ranges
+    lidar_points = data.ranges  # 앞서 확인한 /scan의 데이터 타입 중 ranges타입의 데이터를 변수에 담는 callback함수 정의
 
-rospy.init_node('lidar')
-rospy.Subscriber("/scan", LaserScan, lidar_callback, queue_size = 1)
+rospy.init_node('lidar')    # 노드 선언
+rospy.Subscriber("/scan", LaserScan, lidar_callback, queue_size = 1)    # 수신자 선언, LaserScan 메시지를 콜백함수를 이용해 받아옴
 
+# 토픽 발행자 선언
 pub1 = rospy.Publisher('scan1', Range, queue_size = 1)
 pub2 = rospy.Publisher('scan2', Range, queue_size = 1)
 pub3 = rospy.Publisher('scan3', Range, queue_size = 1)
 pub4 = rospy.Publisher('scan4', Range, queue_size = 1)
 
+# Range 메세지 내용 중 while문 이전에 처리 가능한 메세지 정의
 msg = Range()
 h = Header()
 
@@ -197,8 +199,11 @@ msg.max_range = 2.0
 msg.field_of_view = (30.0/180.0) * 3.14
 
 while not rospy.is_shutdown():
+    # 센서 데이터가 없을 시 대기
     if lidar_points == None:
         continue
+
+    # 360`를 4등분하여 range값 설정, msg publish
     # pub1
     h.frame_id = "front"
     msg.header = h
@@ -226,7 +231,7 @@ while not rospy.is_shutdown():
     time.sleep(0.5)
 ```
 
-## 2. urdf파일 작성
+## 3. urdf파일 작성
 * 경로: ~/xycar_ws/src/rviz_lidar/urdf/lidar_urdf.urdf
 
 ```html
@@ -317,7 +322,7 @@ while not rospy.is_shutdown():
 ```
 <br>
 
-## 3. launch파일 작성
+## 4. launch파일 작성
 ```html
 <!-- ~/xycar_ws/src/rviz_lidar/launch/lidar_urdf.launch-->
 <launch>
@@ -330,3 +335,23 @@ while not rospy.is_shutdown():
 </launch>
 ```
 
+## 실행 결과
+```
+$ rostopic echo /scan
+```
+<br>
+
+![11.png](../../../images/Autonomous_Driving/Week3/11.png)
+<br>
+
+```
+$ rqt_graph
+```
+<br>
+
+![12.png](../../../images/Autonomous_Driving/Week3/12.png)
+<br>
+
+## 실행 영상
+![2.gif](../../../images/Autonomous_Driving/Week3/2.gif)
+<br>

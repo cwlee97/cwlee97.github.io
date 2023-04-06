@@ -50,5 +50,11 @@ categories: Autonomous_Driving_course
 * [코딩테스트 문제 풀이](https://1stapplepie.github.io/autonomous_driving_course/Day5_Test/)
 
 # Week3
-## [Day1] Xycar sensor
-* [Xycar sensor](https://1stapplepie.github.io/autonomous_driving_course/Day1_xycar_sensor/)
+## [Day1] Xycar Sensor
+* [Xycar Sensor](https://1stapplepie.github.io/autonomous_driving_course/Day1_xycar_sensor/)
+
+## [Day2] Lidar Sensor
+* [Lidar Sensor](https://1stapplepie.github.io/Day2_Lidar_Sensor/)
+
+## [Day3] Ultrasonic Sensor
+* [Ultrasonic Sensor](https://1stapplepie.github.io/Day3_UltraSonic_Sensor/)
