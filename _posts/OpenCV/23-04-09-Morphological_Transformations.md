@@ -7,6 +7,7 @@ categories: TIL
 Morphological Transformation은 이미지 모양을 기반으로 하는 몇 가지 간단한 작업이다. 일반적으로 binary image에서 실행되고, 입력으로 원본 이미지와 구조 요소(또는 커널)을 필요로 한다.<br>
 두 개의 기본 Morphological 연산자는 Erosion과 Dilation이 있다.
 <br>
+<hr>
 
 # Erosion
 Erosion은 커널이 이미지를 통과하며 이동한다. 이는 CNN에서 2D conv filter를 사용하는 것과 유사하다. 원본 이미지의 픽셀은 커널 아래의 모든 픽셀이 1인 경우에만 1로 간주되고 이외는 0으로 간주한다.<br>
@@ -50,6 +51,7 @@ plt.show()
 <br>
 
 커널 크기가 증가할수록 더 많은 노이즈가 제거되는 것을 볼 수 있다.
+<hr>
 
 # Dilation
 위의 Erosion과 반대 개념으로, 커널 내의 적어도 하나의 픽셀이 1이면, 픽셀 요소가 1로 변경되는 연산자.<br>
@@ -87,6 +89,7 @@ plt.show()
 <br>
 
 원하는 차선 영역 확대는 이루어졌으나 화이트 노이즈 또한 확대되었다.
+<hr>
 
 # Opening
 화이트 노이즈는 없애면서 차선은 확대하는 법은 없을까?<br>
@@ -123,6 +126,7 @@ plt.show()
 <br>
 
 erosion보다는 선명한 차선과 dilation보다는 적은 화이트 노이즈를 확인할 수 있었다.
+<hr>
 
 # Closing
 Opening과는 반대되는 개념으로 dilation 후에 erosion이 이루어진다.
@@ -156,6 +160,7 @@ plt.show()
 <br>
 
 Opening에 비해 화이트 노이즈 제거 효과는 약하지만 차선을 부각시키는데는 가장 효과적이었다.
+<hr>
 
 # Morphological Gradient
 객체의 윤곽선 검출에 사용하는 연산자
@@ -189,6 +194,7 @@ plt.show()
 <br>
 
 binary 이미지에서 contour 필터를 사용한 윤곽선 검출은 많이 진행해보았으나 이 방법도 좋은것같다.
+<hr>
 
 # Top Hat
 밝기 값이 크게 변화하는 영역 강조
@@ -220,6 +226,7 @@ plt.show()
 ### kernel = 20, 20
 ![18.png](../../images/OpenCV/Morphological_Transformations/18.png)
 <br>
+<hr>
 
 # Black Hat
 어두운 부분을 강조
