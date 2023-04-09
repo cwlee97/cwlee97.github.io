@@ -54,7 +54,7 @@ categories: Autonomous_Driving_course
 * [Xycar Sensor](https://1stapplepie.github.io/autonomous_driving_course/Day1_xycar_sensor/)
 
 ## [Day2] Lidar Sensor
-* [Lidar Sensor](https://1stapplepie.github.io/Day2_Lidar_Sensor/)
+* [Lidar Sensor](https://1stapplepie.github.io/autonomous_driving_course/Day2_Lidar_Sensor/)
 
 ## [Day3] Ultrasonic Sensor
-* [Ultrasonic Sensor](https://1stapplepie.github.io/Day3_UltraSonic_Sensor/)
+* [Ultrasonic Sensor](https://1stapplepie.github.io/autonomous_driving_course/Day3_UltraSonic_Sensor/)
