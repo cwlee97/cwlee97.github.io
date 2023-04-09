@@ -258,3 +258,6 @@ plt.show()
 ### kernel = 20, 20
 ![21.png](../../images/OpenCV/Morphological_Transformations/21.png)
 <br>
+
+# Reference
+https://docs.opencv.org/4.x/d9/d61/tutorial_py_morphological_ops.html
