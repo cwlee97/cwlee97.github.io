@@ -59,10 +59,14 @@ categories: Autonomous_Driving_course
 ## [Day3] Ultrasonic Sensor
 * [Ultrasonic Sensor](https://1stapplepie.github.io/autonomous_driving_course/Day3_UltraSonic_Sensor/)
 
+## [Day 4, 5] Lidar & Ultrasonic Detectoin & Driving
+* [Lidar Detection & Driving]()
+* [Ultrasonic Detection & Driving]()
+
 # Week4
 ## [Day1] OpenCV
 * [OpenCV Basic](https://1stapplepie.github.io/autonomous_driving_course/Day1_OpenCV_Basic/)
 
 ## [Day2] OpenCV Transform
 * [Hough Transform](https://1stapplepie.github.io/autonomous_driving_course/Day2_Hough_Transform/)
-* [Warping Transform](https://1stapplepie.github.io/autonomous_driving_course/Day2_Warping-Transform/)
+* [Transformations](https://1stapplepie.github.io/autonomous_driving_course/Day2_Warping-Transform/)
