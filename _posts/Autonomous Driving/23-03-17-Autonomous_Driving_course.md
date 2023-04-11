@@ -60,8 +60,8 @@ categories: Autonomous_Driving_course
 * [Ultrasonic Sensor](https://1stapplepie.github.io/autonomous_driving_course/Day3_UltraSonic_Sensor/)
 
 ## [Day 4, 5] Lidar & Ultrasonic Detectoin & Driving
-* [Lidar Detection & Driving]()
-* [Ultrasonic Detection & Driving]()
+* [Lidar Detection & Driving](https://1stapplepie.github.io/autonomous_driving_course/Day4,5_Lidar_detection&driving/)
+* [Ultrasonic Detection & Driving](https://1stapplepie.github.io/autonomous_driving_course/Day4,5_Ultrasonic_detection&driving/)
 
 # Week4
 ## [Day1] OpenCV
