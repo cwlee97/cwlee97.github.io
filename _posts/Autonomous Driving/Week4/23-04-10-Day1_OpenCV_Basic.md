@@ -319,7 +319,7 @@ def start():
                 right = r
                 break
         if left != -1:
-            lsquare = cv2.rectangle(view, (left - area_width_20, row_begin_5), (0, 255, 0), 3)
+            lsquare = cv2.rectangle(view, (left - area_width_20, row_begin_5), (left, row_end_15), (0, 255, 0), 3)
         else:
             print("Lost left line")
         
@@ -333,7 +333,7 @@ def start():
 
         center = (right + left) / 2
         shift = center - 320
-        Angle = Shift / 3
+        Angle = shift / 3
         if Angle < -50:
             Angle = -50
         if Angle > 50:
