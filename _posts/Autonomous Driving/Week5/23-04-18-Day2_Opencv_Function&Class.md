@@ -1,7 +1,8 @@
 ---
 layout: single
-title: Opencv Basic with cpp
+title: Opencv Function & Class
 categories: Autonomous_Driving_course
+use_math: true
 ---
 
 # 영상 파일 불러오기

@@ -2,6 +2,7 @@
 layout: single
 title: Probability and Statistics
 categories: Autonomous_Driving_course
+use_math: true
 ---
 
 # State Estimation
