@@ -187,7 +187,9 @@ typedef std::string cv::String;
     * 다양한 사칙 연산에 대한 연산자 오버로딩과 std::cout 출력을 위한 << 연산자 오버로딩 지원
 * 행렬의 원소(픽셀 값) 접근 방법을 제공
     * Mat::data 멤버 변수가 실제 픽셀 데이터 위치를 가리킴<br>
-    $addr(M_{i,j})=M.data+M.step[0]*i+M.step[1]*j$
+
+    * $addr(M_{i,j})=M.data+M.step[0]*i+M.step[1]*j$
+
     * Mat::at<typename\>(int y, int x) 또는 Mat::ptr<typename\>(int y) 함수 사용을 권장
 
 ## InputArray
