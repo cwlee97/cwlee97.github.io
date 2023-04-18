@@ -22,7 +22,7 @@ import cv2, random, math, copy
 Width = 640
 Height = 480
 
-cap = cv2.VideoCapture("xycar_track1.avi")
+cap = cv2.VideoCapture(0)
 window_title = 'camera'
 
 warp_img_w = 320    # bird_eye_view image width
@@ -91,7 +91,7 @@ def warp_process_image(img):
     _, L, _ = cv2.split(cv2.cvtColor(blur, cv2.COLOR_BGR2HLS))  
 
     # lane_bin_th: threshold
-    _, lane = cv2.threshold(L, lane_bin_th, 255, cv2.THRESH_BINARY) 
+    _, lane = cv2.threshold(L, lane_bin_th, 255, cv2.THRESH_BINARY_INV) 
 
     # histogram: A graph of the distribution of pixel values ​​constituting an image
     histogram = np.sum(lane[lane.shape[0] // 2 :, :], axis = 0)

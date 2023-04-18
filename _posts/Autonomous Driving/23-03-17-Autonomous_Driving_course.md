@@ -70,3 +70,12 @@ categories: Autonomous_Driving_course
 ## [Day2] OpenCV Transform
 * [Hough Transform](https://1stapplepie.github.io/autonomous_driving_course/Day2_Hough_Transform/)
 * [Transformations](https://1stapplepie.github.io/autonomous_driving_course/Day2_Warping-Transform/)
+
+## [Day3] PID control
+
+# Week5
+## [Day1] Probability and Statistics
+* [Probability and Statistics]()
+
+## [Day2] Opencv Basic with cpp
+* [Opencv Function & Class]()
