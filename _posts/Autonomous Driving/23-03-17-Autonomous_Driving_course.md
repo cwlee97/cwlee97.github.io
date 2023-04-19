@@ -77,5 +77,6 @@ categories: Autonomous_Driving_course
 ## [Day1] Probability and Statistics
 * [Probability and Statistics](https://1stapplepie.github.io/autonomous_driving_course/Day1_-Probability-and-Statistics/)
 
-## [Day2] Opencv Basic with cpp
+## [Day2, 3] Opencv Basic with cpp
 * [Opencv Function & Class](https://1stapplepie.github.io/autonomous_driving_course/Day2_Opencv_Function&Class/)
+* [Opencv with C++]()
