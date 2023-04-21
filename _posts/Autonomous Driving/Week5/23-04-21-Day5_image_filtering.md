@@ -96,7 +96,7 @@ filter2D(src, dst, -1, kernel);
 
 ## 가우시안 함수
 
-![3.png](../../../images/Autonomous_Driving/Week5/3.png)
+![3.png](../../../images/Autonomous_Driving/Week5/3.png){: width="300" height="120"}
 <br>
 
 ## 가우시안 필터링 함수
@@ -168,7 +168,7 @@ void randn(InputOutputArray dst, InputArray mean, InputArray stddev);
 * 평균 값 필터 또는 가우시안 필터는 엣지 부근에서도 픽셀 값을 평탄하게 만드는 단점이 있음
 * 기준 픽셀과 이웃 픽셀과의 거리, 그리고 픽셀 값의 차이를 함께 고려하여 블러링 정도를 조절
 
-![6.png](../../../images/Autonomous_Driving/Week5/6.png)
+![6.png](../../../images/Autonomous_Driving/Week5/6.png){: width="300" height="120"}
 <br>
 
 ## 양방향 필터링 함수
