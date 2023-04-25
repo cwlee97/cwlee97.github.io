@@ -87,7 +87,7 @@ categories: Autonomous_Driving_course
 # Week6
 
 ## [Day1] OpenCV Geometric Transform
-* [OpenCV Geometric Transform]()
+* [OpenCV Geometric Transform](https://1stapplepie.github.io/autonomous_driving_course/Day1_OpenCV_Geometrictransform/)
 
 ## [Day2] OpenCV Color Image
-* [OpenCV Color Image]()
+* [OpenCV Color Image](https://1stapplepie.github.io/autonomous_driving_course/Day2_OpenCV_ColorImage/)

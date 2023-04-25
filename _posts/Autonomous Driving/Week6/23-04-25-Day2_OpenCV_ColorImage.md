@@ -91,21 +91,21 @@ $Y = 0.299R + 0.587G + 0.114B$
 
 # 색 공간 변환
 
-![5.png](../../../images/Autonomous_Driving/Week6/5.png){: width="300" height="120"}
+![5.png](../../../images/Autonomous_Driving/Week6/5.png)
 <br>
 
 # 다양한 색 공간
 
 ## RGB
-![6.png](../../../images/Autonomous_Driving/Week6/6.png){: width="300" height="120"}
+![6.png](../../../images/Autonomous_Driving/Week6/6.png)
 <br>
 
 ## HSV
-![7.png](../../../images/Autonomous_Driving/Week6/7.png){: width="300" height="120"}
+![7.png](../../../images/Autonomous_Driving/Week6/7.png)
 <br>
 
 ## YCrCb
-![8.png](../../../images/Autonomous_Driving/Week6/8.png){: width="300" height="120"}
+![8.png](../../../images/Autonomous_Driving/Week6/8.png)
 <br>
 
 # 채널 분리와 병합
@@ -122,7 +122,7 @@ void merge(InputArrayOfArrays mv, OutputArray dst);
 ```
 
 # 컬러 영상의 히스토그램 평활화
-![9.png](../../../images/Autonomous_Driving/Week6/9.png){: width="300" height="120"}
+![9.png](../../../images/Autonomous_Driving/Week6/9.png)
 <br>
 
 * 밝기 성분에 대해서만 히스토그램 평활화 수행(색상 성분은 그대로 유지)
@@ -167,7 +167,7 @@ void inRange(InputArray src, UnputArray lowerb, InputArray upperb, OutputArray d
 
 
 # 히스토그램 역투영
-![10.png](../../../images/Autonomous_Driving/Week6/10.png){: width="500" height="120"}
+![10.png](../../../images/Autonomous_Driving/Week6/10.png)
 <br>
 
 ## 히스토그램 역투영 함수
