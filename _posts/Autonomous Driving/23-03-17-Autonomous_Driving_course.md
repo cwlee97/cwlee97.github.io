@@ -82,4 +82,12 @@ categories: Autonomous_Driving_course
 * [Opencv with C++](https://1stapplepie.github.io/autonomous_driving_course/Day3_Opencv_with_C++/)
 
 ## [Day 5] Image Filtering
-* [Image Filtering]()
+* [Image Filtering](https://1stapplepie.github.io/autonomous_driving_course/Day5_image_filtering/)
+
+# Week6
+
+## [Day1] OpenCV Geometric Transform
+* [OpenCV Geometric Transform]()
+
+## [Day2] OpenCV Color Image
+* [OpenCV Color Image]()
