@@ -91,3 +91,9 @@ categories: Autonomous_Driving_course
 
 ## [Day2] OpenCV Color Image
 * [OpenCV Color Image](https://1stapplepie.github.io/autonomous_driving_course/Day2_OpenCV_ColorImage/)
+
+## [Day3] Image Keypoints
+* [Image Keypoints]()
+
+## [Day4] Binary Image Process
+* [Binary Image Process]()
