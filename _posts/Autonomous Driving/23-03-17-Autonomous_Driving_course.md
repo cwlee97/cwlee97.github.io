@@ -100,4 +100,4 @@ categories: Autonomous_Driving_course
 
 ## [Day5] OpenCV Programming
 * [Object Detection](https://1stapplepie.github.io/autonomous_driving_course/Day5_Object_detection/)
-* [OpenCV Parallel Programming]()
+* [OpenCV Parallel Programming](https://1stapplepie.github.io/autonomous_driving_course/Day5_OpenCV_parallel_programming/)
