@@ -96,7 +96,7 @@ categories: Autonomous_Driving_course
 * [Image Keypoints](https://1stapplepie.github.io/autonomous_driving_course/Day3_image_keypoint/)
 
 ## [Day4] Binary Image Process
-* [Binary Image Process](https://1stapplepie.github.io/Day4_binary_image_process/)
+* [Binary Image Process](https://1stapplepie.github.io/autonomous_driving_course/Day4_binary_image_process/)
 
 ## [Day5] OpenCV Programming
 * [Object Detection](https://1stapplepie.github.io/autonomous_driving_course/Day5_Object_detection/)
