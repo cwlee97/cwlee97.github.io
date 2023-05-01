@@ -101,3 +101,8 @@ categories: Autonomous_Driving_course
 ## [Day5] OpenCV Programming
 * [Object Detection](https://1stapplepie.github.io/autonomous_driving_course/Day5_Object_detection/)
 * [OpenCV Parallel Programming](https://1stapplepie.github.io/autonomous_driving_course/Day5_OpenCV_parallel_programming/)
+
+# Week7
+
+## [Day1] Feature point detection and matching
+* [Feature point detection and matching](https://1stapplepie.github.io/autonomous_driving_course/Day1_feature_point_detection_and_matching/)
