@@ -108,4 +108,4 @@ categories: Autonomous_Driving_course
 * [Feature point detection and matching](https://1stapplepie.github.io/autonomous_driving_course/Day1_feature_point_detection_and_matching/)
 
 ## [Day2] ML & DL
-* [ML & DL]()
+* [ML & DL](https://1stapplepie.github.io/autonomous_driving_course/Day2_ML&DL/)
