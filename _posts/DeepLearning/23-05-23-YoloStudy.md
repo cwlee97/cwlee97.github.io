@@ -3,7 +3,6 @@ layout: single
 title: Yolo Study
 categories: TIL
 ---
-
 # Yolo v3
 데브코스 Object Detection 프로젝트에 앞서 Yolo v3에 대하여 알아볼 필요가 있어 진행해보고자 한다.
 
@@ -27,7 +26,7 @@ from seaborn import color_palette
 import cv2
 ```
 
-    WARNING:tensorflow:From /usr/local/lib/python3.10/dist-packages/tensorflow/python/compat/v2_compat.py:107: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
+    WARNING:tensorflow:From C:\Users\HP\AppData\Local\Programs\Python\Python311\Lib\site-packages\tensorflow\python\compat\v2_compat.py:107: disable_resource_variables (from tensorflow.python.ops.variable_scope) is deprecated and will be removed in a future version.
     Instructions for updating:
     non-resource variables are not supported in the long term
     
@@ -597,7 +596,7 @@ def draw_boxes(img_names, boxes_dicts, class_names, model_size):
                                          boxes_dicts):
         img = Image.open(img_name)
         draw = ImageDraw.Draw(img)
-        font = ImageFont.truetype(font='../input/futur.ttf',
+        font = ImageFont.truetype(font='futur.ttf',
                                   size=(img.size[0] + img.size[1]) // 100)
         resize_factor = \
             (img.size[0] / model_size[0], img.size[1] / model_size[1])
@@ -722,8 +721,8 @@ def load_weights(variables, file_name):
 
 
 ```python
-img_names = ['/content/group-portrait-adorable-puppies.jpg']
-img = cv2.imread('/content/group-portrait-adorable-puppies.jpg')
+img_names = ['group-portrait-adorable-puppies.jpg']
+img = cv2.imread('group-portrait-adorable-puppies.jpg')
 img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 plt.imshow(img)
 ```
@@ -731,7 +730,7 @@ plt.imshow(img)
 
 
 
-    <matplotlib.image.AxesImage at 0x7fd3018d6620>
+    <matplotlib.image.AxesImage at 0x1984c7b8110>
 
 
 
@@ -745,7 +744,7 @@ plt.imshow(img)
 ```python
 batch_size = 1
 batch = load_images(img_names, model_size = _MODEL_SIZE)
-class_names = load_class_names('/content/coco.names')
+class_names = load_class_names('coco.names')
 n_classes = len(class_names)
 max_output_size = 10
 iou_threshold = 0.5
@@ -761,7 +760,7 @@ inputs = tf.placeholder(tf.float32, [batch_size, 416, 416, 3])
 detections = model(inputs, training=False)
 
 model_vars = tf.global_variables(scope='yolo_v3_model')
-assign_ops = load_weights(model_vars, '/content/yolov3.weights')
+assign_ops = load_weights(model_vars, 'yolov3.weights')
 
 with tf.Session() as sess:
     sess.run(assign_ops)
@@ -770,279 +769,34 @@ with tf.Session() as sess:
 draw_boxes(img_names, detection_result, class_names, _MODEL_SIZE)
 ```
 
-    <ipython-input-6-8bcf619fd901>:32: UserWarning: `tf.layers.conv2d` is deprecated and will be removed in a future version. Please Use `tf.keras.layers.Conv2D` instead.
+    C:\Users\HP\AppData\Local\Temp\ipykernel_6940\1123836556.py:32: UserWarning: `tf.layers.conv2d` is deprecated and will be removed in a future version. Please Use `tf.keras.layers.Conv2D` instead.
       return tf.layers.conv2d(
-    <ipython-input-5-89651af5ee37>:3: UserWarning: `tf.layers.batch_normalization` is deprecated and will be removed in a future version. Please use `tf.keras.layers.BatchNormalization` instead. In particular, `tf.control_dependencies(tf.GraphKeys.UPDATE_OPS)` should not be used (consult the `tf.keras.layers.BatchNormalization` documentation).
+    C:\Users\HP\AppData\Local\Temp\ipykernel_6940\4197277095.py:3: UserWarning: `tf.layers.batch_normalization` is deprecated and will be removed in a future version. Please use `tf.keras.layers.BatchNormalization` instead. In particular, `tf.control_dependencies(tf.GraphKeys.UPDATE_OPS)` should not be used (consult the `tf.keras.layers.BatchNormalization` documentation).
       return tf.layers.batch_normalization(
-    <ipython-input-9-91a7ea47338e>:18: UserWarning: `tf.layers.conv2d` is deprecated and will be removed in a future version. Please Use `tf.keras.layers.Conv2D` instead.
-      inputs = tf.layers.conv2d(inputs, filters=n_anchors * (5 + n_classes),
-    WARNING:tensorflow:From /usr/local/lib/python3.10/dist-packages/tensorflow/python/util/dispatch.py:1176: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+    
+
+    WARNING:tensorflow:From C:\Users\HP\AppData\Local\Programs\Python\Python311\Lib\site-packages\tensorflow\python\util\dispatch.py:1176: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
     Instructions for updating:
     Use `tf.cast` instead.
     
 
-
-    ---------------------------------------------------------------------------
-
-    UnimplementedError                        Traceback (most recent call last)
-
-    /usr/local/lib/python3.10/dist-packages/tensorflow/python/client/session.py in _do_call(self, fn, *args)
-       1377     try:
-    -> 1378       return fn(*args)
-       1379     except errors.OpError as e:
+    C:\Users\HP\AppData\Local\Temp\ipykernel_6940\3330580713.py:18: UserWarning: `tf.layers.conv2d` is deprecated and will be removed in a future version. Please Use `tf.keras.layers.Conv2D` instead.
+      inputs = tf.layers.conv2d(inputs, filters=n_anchors * (5 + n_classes),
+    C:\Users\HP\AppData\Local\Temp\ipykernel_6940\2927243592.py:70: DeprecationWarning: textsize is deprecated and will be removed in Pillow 10 (2023-07-01). Use textbbox or textlength instead.
+      text_size = draw.textsize(text, font=font)
+    C:\Users\HP\AppData\Local\Temp\ipykernel_6940\2927243592.py:70: DeprecationWarning: textsize is deprecated and will be removed in Pillow 10 (2023-07-01). Use textbbox or textlength instead.
+      text_size = draw.textsize(text, font=font)
+    C:\Users\HP\AppData\Local\Temp\ipykernel_6940\2927243592.py:70: DeprecationWarning: textsize is deprecated and will be removed in Pillow 10 (2023-07-01). Use textbbox or textlength instead.
+      text_size = draw.textsize(text, font=font)
+    C:\Users\HP\AppData\Local\Temp\ipykernel_6940\2927243592.py:70: DeprecationWarning: textsize is deprecated and will be removed in Pillow 10 (2023-07-01). Use textbbox or textlength instead.
+      text_size = draw.textsize(text, font=font)
+    C:\Users\HP\AppData\Local\Temp\ipykernel_6940\2927243592.py:70: DeprecationWarning: textsize is deprecated and will be removed in Pillow 10 (2023-07-01). Use textbbox or textlength instead.
+      text_size = draw.textsize(text, font=font)
     
 
-    /usr/local/lib/python3.10/dist-packages/tensorflow/python/client/session.py in _run_fn(feed_dict, fetch_list, target_list, options, run_metadata)
-       1360       self._extend_graph()
-    -> 1361       return self._call_tf_sessionrun(options, feed_dict, fetch_list,
-       1362                                       target_list, run_metadata)
-    
-
-    /usr/local/lib/python3.10/dist-packages/tensorflow/python/client/session.py in _call_tf_sessionrun(self, options, feed_dict, fetch_list, target_list, run_metadata)
-       1453                           run_metadata):
-    -> 1454     return tf_session.TF_SessionRun_wrapper(self._session, options, feed_dict,
-       1455                                             fetch_list, target_list,
-    
-
-    UnimplementedError: The Conv2D op currently only supports the NHWC tensor format on the CPU. The op was given the format: NCHW
-    	 [[{{node yolo_v3_model/conv2d/Conv2D}}]]
 
     
-    During handling of the above exception, another exception occurred:
-    
-
-    UnimplementedError                        Traceback (most recent call last)
-
-    <ipython-input-16-ca15914906b9> in <cell line: 21>()
-         21 with tf.Session() as sess:
-         22     sess.run(assign_ops)
-    ---> 23     detection_result = sess.run(detections, feed_dict={inputs: batch})
-         24 
-         25 draw_boxes(img_names, detection_result, class_names, _MODEL_SIZE)
-    
-
-    /usr/local/lib/python3.10/dist-packages/tensorflow/python/client/session.py in run(self, fetches, feed_dict, options, run_metadata)
-        966 
-        967     try:
-    --> 968       result = self._run(None, fetches, feed_dict, options_ptr,
-        969                          run_metadata_ptr)
-        970       if run_metadata:
-    
-
-    /usr/local/lib/python3.10/dist-packages/tensorflow/python/client/session.py in _run(self, handle, fetches, feed_dict, options, run_metadata)
-       1189     # or if the call is a partial run that specifies feeds.
-       1190     if final_fetches or final_targets or (handle and feed_dict_tensor):
-    -> 1191       results = self._do_run(handle, final_targets, final_fetches,
-       1192                              feed_dict_tensor, options, run_metadata)
-       1193     else:
-    
-
-    /usr/local/lib/python3.10/dist-packages/tensorflow/python/client/session.py in _do_run(self, handle, target_list, fetch_list, feed_dict, options, run_metadata)
-       1369 
-       1370     if handle is None:
-    -> 1371       return self._do_call(_run_fn, feeds, fetches, targets, options,
-       1372                            run_metadata)
-       1373     else:
-    
-
-    /usr/local/lib/python3.10/dist-packages/tensorflow/python/client/session.py in _do_call(self, fn, *args)
-       1395                     '\nsession_config.graph_options.rewrite_options.'
-       1396                     'disable_meta_optimizer = True')
-    -> 1397       raise type(e)(node_def, op, message)  # pylint: disable=no-value-for-parameter
-       1398 
-       1399   def _extend_graph(self):
-    
-
-    UnimplementedError: Graph execution error:
-    
-    Detected at node 'yolo_v3_model/conv2d/Conv2D' defined at (most recent call last):
-        File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
-          return _run_code(code, main_globals, None,
-        File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
-          exec(code, run_globals)
-        File "/usr/local/lib/python3.10/dist-packages/ipykernel_launcher.py", line 16, in <module>
-          app.launch_new_instance()
-        File "/usr/local/lib/python3.10/dist-packages/traitlets/config/application.py", line 992, in launch_instance
-          app.start()
-        File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelapp.py", line 619, in start
-          self.io_loop.start()
-        File "/usr/local/lib/python3.10/dist-packages/tornado/platform/asyncio.py", line 195, in start
-          self.asyncio_loop.run_forever()
-        File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
-          self._run_once()
-        File "/usr/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
-          handle._run()
-        File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
-          self._context.run(self._callback, *self._args)
-        File "/usr/local/lib/python3.10/dist-packages/tornado/ioloop.py", line 685, in <lambda>
-          lambda f: self._run_callback(functools.partial(callback, future))
-        File "/usr/local/lib/python3.10/dist-packages/tornado/ioloop.py", line 738, in _run_callback
-          ret = callback()
-        File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 825, in inner
-          self.ctx_run(self.run)
-        File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 786, in run
-          yielded = self.gen.send(value)
-        File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 377, in dispatch_queue
-          yield self.process_one()
-        File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 250, in wrapper
-          runner = Runner(ctx_run, result, future, yielded)
-        File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 748, in __init__
-          self.ctx_run(self.run)
-        File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 786, in run
-          yielded = self.gen.send(value)
-        File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 361, in process_one
-          yield gen.maybe_future(dispatch(*args))
-        File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 234, in wrapper
-          yielded = ctx_run(next, result)
-        File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 261, in dispatch_shell
-          yield gen.maybe_future(handler(stream, idents, msg))
-        File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 234, in wrapper
-          yielded = ctx_run(next, result)
-        File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 539, in execute_request
-          self.do_execute(
-        File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 234, in wrapper
-          yielded = ctx_run(next, result)
-        File "/usr/local/lib/python3.10/dist-packages/ipykernel/ipkernel.py", line 302, in do_execute
-          res = shell.run_cell(code, store_history=store_history, silent=silent)
-        File "/usr/local/lib/python3.10/dist-packages/ipykernel/zmqshell.py", line 539, in run_cell
-          return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)
-        File "/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py", line 2975, in run_cell
-          result = self._run_cell(
-        File "/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py", line 3030, in _run_cell
-          return runner(coro)
-        File "/usr/local/lib/python3.10/dist-packages/IPython/core/async_helpers.py", line 78, in _pseudo_sync_runner
-          coro.send(None)
-        File "/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py", line 3257, in run_cell_async
-          has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
-        File "/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py", line 3473, in run_ast_nodes
-          if (await self.run_code(code, result,  async_=asy)):
-        File "/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py", line 3553, in run_code
-          exec(code_obj, self.user_global_ns, self.user_ns)
-        File "<ipython-input-16-ca15914906b9>", line 16, in <cell line: 16>
-          detections = model(inputs, training=False)
-        File "<ipython-input-12-b82d912a33ed>", line 49, in __call__
-          route1, route2, inputs = darknet53(inputs, training=training,
-        File "<ipython-input-7-ee2e3af4a0f9>", line 25, in darknet53
-          inputs = conv2d_fixed_padding(inputs, filters=32, kernel_size=3,
-        File "<ipython-input-6-8bcf619fd901>", line 32, in conv2d_fixed_padding
-          return tf.layers.conv2d(
-        File "/usr/local/lib/python3.10/dist-packages/keras/legacy_tf_layers/convolutional.py", line 595, in conv2d
-          return layer(inputs)
-        File "/usr/local/lib/python3.10/dist-packages/keras/legacy_tf_layers/base.py", line 622, in __call__
-          outputs = super().__call__(inputs, *args, **kwargs)
-        File "/usr/local/lib/python3.10/dist-packages/keras/engine/base_layer_v1.py", line 838, in __call__
-          outputs = call_fn(cast_inputs, *args, **kwargs)
-        File "/usr/local/lib/python3.10/dist-packages/keras/layers/convolutional/base_conv.py", line 290, in call
-          outputs = self.convolution_op(inputs, self.kernel)
-        File "/usr/local/lib/python3.10/dist-packages/keras/layers/convolutional/base_conv.py", line 262, in convolution_op
-          return tf.nn.convolution(
-    Node: 'yolo_v3_model/conv2d/Conv2D'
-    The Conv2D op currently only supports the NHWC tensor format on the CPU. The op was given the format: NCHW
-    	 [[{{node yolo_v3_model/conv2d/Conv2D}}]]
-    
-    Original stack trace for 'yolo_v3_model/conv2d/Conv2D':
-      File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
-        return _run_code(code, main_globals, None,
-      File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
-        exec(code, run_globals)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel_launcher.py", line 16, in <module>
-        app.launch_new_instance()
-      File "/usr/local/lib/python3.10/dist-packages/traitlets/config/application.py", line 992, in launch_instance
-        app.start()
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelapp.py", line 619, in start
-        self.io_loop.start()
-      File "/usr/local/lib/python3.10/dist-packages/tornado/platform/asyncio.py", line 195, in start
-        self.asyncio_loop.run_forever()
-      File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
-        self._run_once()
-      File "/usr/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
-        handle._run()
-      File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
-        self._context.run(self._callback, *self._args)
-      File "/usr/local/lib/python3.10/dist-packages/tornado/ioloop.py", line 685, in <lambda>
-        lambda f: self._run_callback(functools.partial(callback, future))
-      File "/usr/local/lib/python3.10/dist-packages/tornado/ioloop.py", line 738, in _run_callback
-        ret = callback()
-      File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 825, in inner
-        self.ctx_run(self.run)
-      File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 786, in run
-        yielded = self.gen.send(value)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 377, in dispatch_queue
-        yield self.process_one()
-      File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 250, in wrapper
-        runner = Runner(ctx_run, result, future, yielded)
-      File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 748, in __init__
-        self.ctx_run(self.run)
-      File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 786, in run
-        yielded = self.gen.send(value)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 361, in process_one
-        yield gen.maybe_future(dispatch(*args))
-      File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 234, in wrapper
-        yielded = ctx_run(next, result)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 261, in dispatch_shell
-        yield gen.maybe_future(handler(stream, idents, msg))
-      File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 234, in wrapper
-        yielded = ctx_run(next, result)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/kernelbase.py", line 539, in execute_request
-        self.do_execute(
-      File "/usr/local/lib/python3.10/dist-packages/tornado/gen.py", line 234, in wrapper
-        yielded = ctx_run(next, result)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/ipkernel.py", line 302, in do_execute
-        res = shell.run_cell(code, store_history=store_history, silent=silent)
-      File "/usr/local/lib/python3.10/dist-packages/ipykernel/zmqshell.py", line 539, in run_cell
-        return super(ZMQInteractiveShell, self).run_cell(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py", line 2975, in run_cell
-        result = self._run_cell(
-      File "/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py", line 3030, in _run_cell
-        return runner(coro)
-      File "/usr/local/lib/python3.10/dist-packages/IPython/core/async_helpers.py", line 78, in _pseudo_sync_runner
-        coro.send(None)
-      File "/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py", line 3257, in run_cell_async
-        has_raised = await self.run_ast_nodes(code_ast.body, cell_name,
-      File "/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py", line 3473, in run_ast_nodes
-        if (await self.run_code(code, result,  async_=asy)):
-      File "/usr/local/lib/python3.10/dist-packages/IPython/core/interactiveshell.py", line 3553, in run_code
-        exec(code_obj, self.user_global_ns, self.user_ns)
-      File "<ipython-input-16-ca15914906b9>", line 16, in <cell line: 16>
-        detections = model(inputs, training=False)
-      File "<ipython-input-12-b82d912a33ed>", line 49, in __call__
-        route1, route2, inputs = darknet53(inputs, training=training,
-      File "<ipython-input-7-ee2e3af4a0f9>", line 25, in darknet53
-        inputs = conv2d_fixed_padding(inputs, filters=32, kernel_size=3,
-      File "<ipython-input-6-8bcf619fd901>", line 32, in conv2d_fixed_padding
-        return tf.layers.conv2d(
-      File "/usr/local/lib/python3.10/dist-packages/keras/legacy_tf_layers/convolutional.py", line 595, in conv2d
-        return layer(inputs)
-      File "/usr/local/lib/python3.10/dist-packages/keras/legacy_tf_layers/base.py", line 622, in __call__
-        outputs = super().__call__(inputs, *args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/keras/engine/base_layer_v1.py", line 838, in __call__
-        outputs = call_fn(cast_inputs, *args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/tensorflow/python/autograph/impl/api.py", line 689, in wrapper
-        return converted_call(f, args, kwargs, options=options)
-      File "/usr/local/lib/python3.10/dist-packages/tensorflow/python/autograph/impl/api.py", line 377, in converted_call
-        return _call_unconverted(f, args, kwargs, options)
-      File "/usr/local/lib/python3.10/dist-packages/tensorflow/python/autograph/impl/api.py", line 458, in _call_unconverted
-        return f(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/keras/layers/convolutional/base_conv.py", line 290, in call
-        outputs = self.convolution_op(inputs, self.kernel)
-      File "/usr/local/lib/python3.10/dist-packages/keras/layers/convolutional/base_conv.py", line 262, in convolution_op
-        return tf.nn.convolution(
-      File "/usr/local/lib/python3.10/dist-packages/tensorflow/python/util/traceback_utils.py", line 150, in error_handler
-        return fn(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/tensorflow/python/util/dispatch.py", line 1176, in op_dispatch_handler
-        return dispatch_target(*args, **kwargs)
-      File "/usr/local/lib/python3.10/dist-packages/tensorflow/python/ops/nn_ops.py", line 1181, in convolution_v2
-        return convolution_internal(
-      File "/usr/local/lib/python3.10/dist-packages/tensorflow/python/ops/nn_ops.py", line 1313, in convolution_internal
-        return op(
-      File "/usr/local/lib/python3.10/dist-packages/tensorflow/python/ops/nn_ops.py", line 2787, in _conv2d_expanded_batch
-        return gen_nn_ops.conv2d(
-      File "/usr/local/lib/python3.10/dist-packages/tensorflow/python/ops/gen_nn_ops.py", line 1144, in conv2d
-        _, _, _op, _outputs = _op_def_library._apply_op_helper(
-      File "/usr/local/lib/python3.10/dist-packages/tensorflow/python/framework/op_def_library.py", line 795, in _apply_op_helper
-        op = g._create_op_internal(op_type_name, inputs, dtypes=None,
-      File "/usr/local/lib/python3.10/dist-packages/tensorflow/python/framework/ops.py", line 3814, in _create_op_internal
-        ret = Operation(
+![png](../../images/YoloStudy/output_35_3.png)
     
 
 
