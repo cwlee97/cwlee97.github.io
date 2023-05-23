@@ -117,3 +117,6 @@ categories: Autonomous_Driving_course
 
 ## [Day1] Docker
 * [Docker install & Learning Docker CLI](https://1stapplepie.github.io/autonomous_driving_course/Day1_Docker/)
+
+## [Day2] Machine Learning
+* [Machine_Learning(PCA, LDA, SVM)](https://1stapplepie.github.io/autonomous_driving_course/Day2_MachineLearning/)
