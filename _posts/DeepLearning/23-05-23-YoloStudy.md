@@ -796,7 +796,7 @@ draw_boxes(img_names, detection_result, class_names, _MODEL_SIZE)
 
 
     
-![png](../../images/YoloStudy/output_35_3.png)
+![png](../../images/YoloStudy/output_36_3.png)
     
 
 
