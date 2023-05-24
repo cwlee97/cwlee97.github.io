@@ -120,3 +120,6 @@ categories: Autonomous_Driving_course
 
 ## [Day2] Machine Learning
 * [Machine_Learning(PCA, LDA, SVM)](https://1stapplepie.github.io/autonomous_driving_course/Day2_MachineLearning/)
+
+## [Day3] Multi Layer Perceptron
+* [Multi Layer Perceptron](https://1stapplepie.github.io/autonomous_driving_course/Day3_MultiPerceptron/)
