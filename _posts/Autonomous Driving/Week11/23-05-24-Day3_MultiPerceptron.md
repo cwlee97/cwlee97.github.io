@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Multi Perceptron
+title: Multi Layer Perceptron
 categories: Autonomous_Driving_course
 use_math: true
 ---
