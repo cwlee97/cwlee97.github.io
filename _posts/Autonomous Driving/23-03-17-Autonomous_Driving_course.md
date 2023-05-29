@@ -123,3 +123,11 @@ categories: Autonomous_Driving_course
 
 ## [Day3] Multi Layer Perceptron
 * [Multi Layer Perceptron](https://1stapplepie.github.io/autonomous_driving_course/Day3_MultiPerceptron/)
+
+## [Day4] Perception in self driving car
+* [Perception in self driving car](https://1stapplepie.github.io/autonomous_driving_course/Day4_Perception_in_self_driving_car/)
+
+# Week12
+
+## [Day1] Optimizer and Drop out
+* [Optimizer and Drop out](https://1stapplepie.github.io/autonomous_driving_course/Day1_Optimizer&Dropout/)
