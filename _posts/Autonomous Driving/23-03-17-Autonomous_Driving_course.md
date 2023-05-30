@@ -127,6 +127,9 @@ categories: Autonomous_Driving_course
 ## [Day4] Perception in self driving car
 * [Perception in self driving car](https://1stapplepie.github.io/autonomous_driving_course/Day4_Perception_in_self_driving_car/)
 
+## [Day5] CNN
+* [CNN - Pooling, Shallow CNN](https://1stapplepie.github.io/Day5_CNN/)
+
 # Week12
 
 ## [Day1] Optimizer and Drop out
