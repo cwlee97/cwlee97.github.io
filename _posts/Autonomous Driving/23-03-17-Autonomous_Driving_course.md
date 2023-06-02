@@ -135,6 +135,6 @@ categories: Autonomous_Driving_course
 ## [Day1] Optimizer and Drop out
 * [Optimizer and Drop out](https://1stapplepie.github.io/autonomous_driving_course/Day1_Optimizer&Dropout/)
 
-## [Day2, 3] YOLO
+## [Day2, 3, 4, 5] YOLO
 * [YOLO](https://1stapplepie.github.io/autonomous_driving_course/Day2_YOLO/)
 * [YOLOv3 with KITTI](https://github.com/1stApplePie/YOLOv3_KITTI)
