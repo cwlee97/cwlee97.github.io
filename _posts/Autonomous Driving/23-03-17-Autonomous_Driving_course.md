@@ -143,3 +143,9 @@ categories: Autonomous_Driving_course
 
 ## [Day1] Autonomous Driving Perception Technology
 * [Autonomous Driving Perception Technology](https://1stapplepie.github.io/autonomous_driving_course/Day1_AutonomousDrivingPerception/)
+
+## [Day2] Opoen Dataset
+* [Open Dataset](https://1stapplepie.github.io/autonomous_driving_course/Day2_OpenDataset/)
+
+## [Day3] Data Labeling
+* [Data Labeling & CVAT Project](https://1stapplepie.github.io/autonomous_driving_course/Day3_DataLabeling/)
