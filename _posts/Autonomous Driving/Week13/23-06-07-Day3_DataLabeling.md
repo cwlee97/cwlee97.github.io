@@ -33,17 +33,37 @@ use_math: true
 
 2. Ubuntu 관리자 권한으로 실행 후 계정 생성
 
-3. WSL 설치 명령
-관리자 권한으로 PowerShell 실행<br>
-Linux용 Windows 하위 시스템 기능을 사용하도록 설정 후 설치
+![png](../../../images/Autonomous_Driving/Week13/2.png)
+<br>
+
+3. WSL 시스템 활성화
+관리자 권한으로 PowerShell 실행
 ```
-> Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-> wsl --list --online
-> wsl --install -d "Ubuntu 20.04 LTS"
+> dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+> dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+> wsl -l -v
 ```
+
+만약 확인 시 version이 1이라면 2로 변경해야 한다.
+
+![png](../../../images/Autonomous_Driving/Week13/3.png)
+<br>
+
+4. Ubuntu 실행
+Windows Terminal에서 우측에 'v'버튼을 클릭하여 'Ubuntu'를 선택
+
+![png](../../../images/Autonomous_Driving/Week13/4.png)
+<br>
+
+![png](../../../images/Autonomous_Driving/Week13/5.png)
+<br>
+
+# Docker Desktop 설치
+[Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+
 
 # Data Augmentation
 * 데이터 증강의 기본 개념은 데이터가 갖고있는 고유한 특징/특성에 (추가/변경/제거)를 통해 새로운 이미지를 만드는 것
 * 색공간 뿐 아니라 이미지의 기하학적 형태를 변형하기도 함
 
-# 추후 내용은 WSL 설치중 발생한 오류 해결 후 업로드 예정
+# CVAT project in process
