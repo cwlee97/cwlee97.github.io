@@ -66,4 +66,14 @@ Windows Terminal에서 우측에 'v'버튼을 클릭하여 'Ubuntu'를 선택
 * 데이터 증강의 기본 개념은 데이터가 갖고있는 고유한 특징/특성에 (추가/변경/제거)를 통해 새로운 이미지를 만드는 것
 * 색공간 뿐 아니라 이미지의 기하학적 형태를 변형하기도 함
 
-# CVAT project in process
+# CVAT을 활용한 Data Labeling
+
+## Object Detection Task
+
+![png](../../../images/Autonomous_Driving/Week13/6.png)
+<br>
+
+## Segmentation Task
+
+![png](../../../images/Autonomous_Driving/Week13/7.png)
+<br>
