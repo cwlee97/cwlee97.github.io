@@ -148,4 +148,4 @@ categories: Autonomous_Driving_course
 * [Open Dataset](https://1stapplepie.github.io/autonomous_driving_course/Day2_OpenDataset/)
 
 ## [Day3] Data Labeling
-* [Data Labeling & CVAT Project](https://1stapplepie.github.io/autonomous_driving_course/Day3_DataLabeling/)
+* [Data Labeling & CVAT Project](https://1stapplepie.rgithub.io/autonomous_driving_course/Day3_DataLabeling/)
