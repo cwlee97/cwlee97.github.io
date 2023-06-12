@@ -41,7 +41,7 @@ Extrinsic, Intrinsic으로 구분하는 이유는 무엇일까?<br>
 $skew_cf_x$는 Image의 비대칭 계수(sker coefficient)를 의미한다. 비대칭 계수는 이미지 센서의 Cell Array의 y축이 기울어진 정도를 의미한다.
 
 # Intrinsic Calibration
-3차우너 공간에 존재하는 한 물체가 2차원 이미지 공간에 투영되는 과정을 설명하려면 좌표계가 정의되어야 한다.<br>
+3차원 공간에 존재하는 한 물체가 2차원 이미지 공간에 투영되는 과정을 설명하려면 좌표계가 정의되어야 한다.<br>
 Computer Vision에서는 4개의 좌표계를 사용한다.
 1. World Coordinate -> $X_w, Y_w, Z_w$
 2. Camera Coordinate -> $X_c, Y_c, Z_c$
