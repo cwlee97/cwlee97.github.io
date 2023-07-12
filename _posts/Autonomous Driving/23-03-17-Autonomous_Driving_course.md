@@ -165,3 +165,6 @@ categories: Autonomous_Driving_course
 
 ## [Day1] SLAM Introduction
 * [SLAM Introduction](https://1stapplepie.github.io/autonomous_driving_course/Day1_SLAM_Introduction/)
+
+## [Day2] SLAM 3D Rotation and Moving
+* [SLAM 3D Rotation and Moving](https://1stapplepie.github.io/autonomous_driving_course/Day2_SLAM_EularAndQuaternion/)
