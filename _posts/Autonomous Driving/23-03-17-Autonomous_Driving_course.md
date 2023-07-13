@@ -168,3 +168,6 @@ categories: Autonomous_Driving_course
 
 ## [Day2] SLAM 3D Rotation and Moving
 * [SLAM 3D Rotation and Moving](https://1stapplepie.github.io/autonomous_driving_course/Day2_SLAM_EularAndQuaternion/)
+
+## [Day3] Feature detector & Paper reading(Harris, FAST, BRIEF, ORB)
+* [Feature detector](https://1stapplepie.github.io/autonomous_driving_course/Day3_Feature_detector/)
