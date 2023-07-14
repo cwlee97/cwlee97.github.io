@@ -13,7 +13,7 @@ categories: Autonomous_Driving_course
 * [Project - Land detection & Object detection & Depth estimation](https://github.com/1stApplePie/ObjectDetectionAndDepth)
 
 # Paper reading
-* [NetVLAD: CNN architecture for weakly supervised place recognition]()
+* [NetVLAD: CNN architecture for weakly supervised place recognition](https://1stapplepie.github.io/autonomous_driving_course/PaperReading_NetVLAD_CNN_architecture_for_weakly_supervised_place_recognition/)
 
 # Week 1
 ## [Day1] 코딩테스트 문제 풀이
