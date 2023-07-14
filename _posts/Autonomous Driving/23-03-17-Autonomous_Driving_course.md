@@ -5,7 +5,15 @@ categories: Autonomous_Driving_course
 ---
 
 # Online Project
-* [Project 1 - Lane Detection With Sliding Window](https://github.com/1stApplePie/Lanedetection_using_slidingwindow)
+* [Project - Lane Detection With Sliding Window](https://github.com/1stApplePie/Lanedetection_using_slidingwindow)
+* [Project - Yolov3 Deep learning Project](https://github.com/1stApplePie/Yolov3DeeplearningProject)
+
+# Offline Project
+* [Project - Lane Detection using Hough(Xycar)](https://github.com/1stApplePie/Lanedetection_using_Hough-Xycar_driving)
+* [Project - Land detection & Object detection & Depth estimation](https://github.com/1stApplePie/ObjectDetectionAndDepth)
+
+# Paper reading
+* [NetVLAD: CNN architecture for weakly supervised place recognition]()
 
 # Week 1
 ## [Day1] 코딩테스트 문제 풀이
