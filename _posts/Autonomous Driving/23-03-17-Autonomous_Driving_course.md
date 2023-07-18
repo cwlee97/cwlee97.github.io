@@ -179,3 +179,11 @@ categories: Autonomous_Driving_course
 
 ## [Day3] Feature detector & Paper reading(Harris, FAST, BRIEF, ORB)
 * [Feature detector](https://1stapplepie.github.io/autonomous_driving_course/Day3_Feature_detector/)
+
+## [Day5] Motion estimation
+* [Motion estimation](https://1stapplepie.github.io/autonomous_driving_course/Day5_Motion_estimation/)
+
+# Week17
+## [Day1] Nonlinear optimization & Loop closure
+* [Least Squares](https://1stapplepie.github.io/autonomous_driving_course/Day1_LeastSquares/)
+* [Bundle Adjustment](https://1stapplepie.github.io/autonomous_driving_course/Day1_BundleAdjustment/)
