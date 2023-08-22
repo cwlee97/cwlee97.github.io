@@ -5,12 +5,13 @@ categories: Autonomous_Driving_course
 ---
 
 # Online Project
-* [Project - Lane Detection With Sliding Window](https://github.com/1stApplePie/Lanedetection_using_slidingwindow)
-* [Project - Yolov3 Deep learning Project](https://github.com/1stApplePie/Yolov3DeeplearningProject)
+* [Project - Lane Detection With Sliding Window](https://www.notion.so/271bb64f610247748e67f35b101465fa?pvs=4)
+* [Project - Yolov3 Deep learning Project](https://www.notion.so/6-41b88e2a1685496d834a981a1d7a0adf?pvs=4)
 
 # Offline Project
 * [Project - Lane Detection using Hough(Xycar)](https://github.com/1stApplePie/Lanedetection_using_Hough-Xycar_driving)
 * [Project - Land detection & Object detection & Depth estimation](https://github.com/1stApplePie/ObjectDetectionAndDepth)
+* [Project - 2D Object Detection And Tracking LiDAR PCD Cluster](https://github.com/1stApplePie/2D-Object-Detection-And-Tracking-LiDAR-PCD-Clustering)
 
 # Paper reading
 * [NetVLAD: CNN architecture for weakly supervised place recognition](https://1stapplepie.github.io/autonomous_driving_course/PaperReading_NetVLAD_CNN_architecture_for_weakly_supervised_place_recognition/)
