@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Array&List&Recursion
+title: Array&Loop&Recursion
 categories: Jungle
 ---
 # 알고리즘
