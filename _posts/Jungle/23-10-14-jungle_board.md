@@ -13,9 +13,10 @@ categories: Jungle
 
 # Week 1
 
-## [Day1] 알고리즘, 자료구조 - BigO, Array, Loop, Recursion
+## [Week 1] 알고리즘, 자료구조
 
-* [BigO, Array, Loop, Recursion](https://1stapplepie.github.io/jungle/array_loop_recursion/)
+* [Day 1 - BigO, Array, Loop, Recursion](https://1stapplepie.github.io/jungle/array_loop_recursion/)
+* [Day 2 - Sorting Algorithm](https://1stapplepie.github.io/jungle/sorting/)
 
 # Essay board
 
