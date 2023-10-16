@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Exhausive Search & 
+title: Exhausive Search & Binary Search & Divide and Conquer
 categories: Jungle
 ---
 
