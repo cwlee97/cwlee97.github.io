@@ -18,6 +18,7 @@ categories: Jungle
 * [Day 1 - BigO, Array, Loop, Recursion](https://1stapplepie.github.io/jungle/array_loop_recursion/)
 * [Day 2 - Sorting Algorithm](https://1stapplepie.github.io/jungle/sorting/)
 * [Day 3 - Exhausive Search & Binary Search & Divide and Conquer](https://1stapplepie.github.io/jungle/exhausive_search/)
+* [Day 4 - Stack & Queue & Priority Queue](https://1stapplepie.github.io/jungle/stack_queue/)
 
 # Essay board
 
