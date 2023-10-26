@@ -11,8 +11,6 @@ categories: Jungle
 
 # TIL board
 
-## Week 1
-
 ### [Week 1] 알고리즘, 자료구조
 
 * [Day 1 - BigO, Array, Loop, Recursion](https://1stapplepie.github.io/jungle/array_loop_recursion/)
@@ -22,7 +20,10 @@ categories: Jungle
 
 ### [Week 2] 알고리즘, 자료구조
 * [Day 1 - Graph & Tree](https://1stapplepie.github.io/jungle/graph_tree/)
+* [Day 2 - DFS & BFS & Topological Sorting](https://1stapplepie.github.io/jungle/BFS_DFS_TopologicalSrot/)
+* [Day 3 - Trie & Dijkstra Algorithm & Floyd Warshall](https://1stapplepie.github.io/jungle/Trie_Dijkstra_floyd/)
+* [Day 4 - Spanning Tree & Minimum Spanning Tree](https://1stapplepie.github.io/jungle/SpanningTree/)
 
 # Essay board
 
-* [Essay 1](https://1stapplepie.github.io/jungle/essay/)j
+* [Essay 1](https://1stapplepie.github.io/jungle/essay/)

@@ -93,7 +93,7 @@ Spaning tree중에서 사용된 가중치의 합이 최소인 트리
 1. Kruskal MST Algorithm
 2. Prim MST Algorithm
 
-## Krusckal MST
+## Kruskal MST
 1. 그래프의 모든 간선들을 가중치의 오름차순으로 정렬
 2. 정렬된 간선 리스트에서 순서대로 사이클을 형성하지 않는 간선을 선택
     * 즉, 가장 낮은 가중치를 먼저 선택
