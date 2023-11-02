@@ -32,7 +32,7 @@ docker build -t ubuntu:20.04 C:\Users\HP\Desktop\
 2. docker run
 
 ```
-docker run -v <local storage>:/ws --name <image_name> containername:version
+docker run -v <local storage>:/ws --name <container_name> containername:version
 ```
 
 ```
@@ -41,6 +41,11 @@ docker run -it -v C:\Users\HP\Desktop\ws\jungle\rbtree:/ws --name ubuntu_20.04 u
 
 ## 실행
 1. 시작
+
+```
+docker start <container_name>
+docker exec -it <container_name>/bin/bash
+```
 
 ```
 docker start ubuntu_20.04
