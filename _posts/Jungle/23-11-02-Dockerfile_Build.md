@@ -3,6 +3,8 @@
 도커 설치 후 DockerFile 빌드 과정입니다.
 
 ## Dockerfile
+파일명: Dockerfile(확장자 없음!)
+
 ```
 From ubuntu:20.04
 
