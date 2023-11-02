@@ -19,6 +19,7 @@ WORKDIR /ws
 
 ## DockerFile 빌드
 1. docker build
+
 ```
 docker build -t [이미지 이름:버전] [DockerFile 경로]
 ```
@@ -29,6 +30,7 @@ docker build -t ubuntu:20.04 C:\Users\HP\Desktop\
 ```
 
 2. docker run
+
 ```
 docker run -v <local storage>:/ws --name <image_name> containername:version
 ```
@@ -39,17 +41,20 @@ docker run -it -v C:\Users\HP\Desktop\ws\jungle\rbtree:/ws --name ubuntu_20.04 u
 
 ## 실행
 1. 시작
+
 ```
 docker start ubuntu_20.04
 docker exec -it ubuntu_20.04 /bin/bash
 ```
 
 2. 종료
+
 ```
 $exit
 ```
 
 ## git 설정
+
 ```
 $ type -p curl >/dev/null || (apt-get update && apt-get install curl -y)
     curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
@@ -63,3 +68,4 @@ $ gh auth login
 
 ### 명령어 이후 해당 포스팅 참조
 https://velog.io/@daelkdev/SOLUTION-GitHub-%ED%86%A0%ED%81%B0-%EA%B4%80%EB%A6%AC%EB%A5%BC-%EC%9C%84%ED%95%9C-gh-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EB%A1%9C%EA%B7%B8%EC%9D%B8
+
