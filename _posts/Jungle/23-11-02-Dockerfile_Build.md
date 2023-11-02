@@ -1,8 +1,4 @@
----
-layout: single
-title: Dockerfile build
-categories: Jungle
----
+
 
 도커 설치 후 DockerFile 빌드 과정입니다.
 
@@ -55,9 +51,15 @@ $exit
 
 ## git 설정
 ```
-$ git config --global user.name "<user_id>"
-$ git config --global user.email "<user_email>"
+$ type -p curl >/dev/null || (apt-get update && apt-get install curl -y)
+    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+    && apt-get update \
+    && apt-get install gh -y
+
+$ gh auth login
 ```
 
-token 비밀번호 정책관련 오류가 발생한다면 https://shortcuts.tistory.com/12 해당 블로그 포스팅을 참고하여 토근 발급 후 비밀번호 란에 토큰번호 입력<br>
-토큰 번호는 발행시에만 확인 가능하므로 저장해두는것을 추천
+### 명령어 이후 해당 포스팅 참조
+https://velog.io/@daelkdev/SOLUTION-GitHub-%ED%86%A0%ED%81%B0-%EA%B4%80%EB%A6%AC%EB%A5%BC-%EC%9C%84%ED%95%9C-gh-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EB%A1%9C%EA%B7%B8%EC%9D%B8
