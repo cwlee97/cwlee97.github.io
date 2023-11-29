@@ -142,7 +142,7 @@ categories: Jungle
 
     <br>
 
-    5. timer interrupt마다 thread_wakeup을 실행하도록 구현
+5. timer interrupt마다 thread_wakeup을 실행하도록 구현
 
     <br>
 
@@ -155,3 +155,40 @@ categories: Jungle
         thread_wakeup (ticks);
     }
     ```
+
+<hr>
+
+## Priority Scheduling
+
+### Key words
+
+1. priority donation
+
+2. priority inversion
+
+3. Priority inheritance
+
+4. multiple donation
+
+5. nested donation
+
+<hr>
+
+### Problem
+
+1. thread yield는 언제 발생하는가?
+
+2. priority donation은 언제 발생하는가?
+
+3. priority donation이 진행된 thread에서 set_priority함수는 어떻게 동작해야 하는가?
+
+4. donated priority값을 list에 모두 담을 것인가? 최종적으로 받은 donated priority값 만을 저장 할 것인가?
+
+<hr>
+
+### Solution
+
+1. thread yield는 thread_create, set_priority, sema_up에서 발생할 수 있음
+    - 말 그대로 '발생할 수' 있으므로 발생이 가능한지 확인이 필요
+
+2. semaphore를 기다리는 waiter
