@@ -24,6 +24,9 @@ categories: Jungle
 * [Day 3 - Trie & Dijkstra Algorithm & Floyd Warshall](https://1stapplepie.github.io/jungle/Trie_Dijkstra_floyd/)
 * [Day 4 - Spanning Tree & Minimum Spanning Tree](https://1stapplepie.github.io/jungle/SpanningTree/)
 
+### Pintos
+* [Pintos 1주차 WIL]()
+
 # Essay board
 
 * [Essay 1](https://1stapplepie.github.io/jungle/essay/)
