@@ -162,6 +162,138 @@ categories: Jungle
 
 ### Key words
 
+
+
+<hr>
+
+### Problem
+
+1. thread yield는 언제 발생하는가?
+
+<hr>
+
+### Solution
+
+1. thread yield는 thread_create, set_priority, sema_up에서 발생할 수 있음
+    - 말 그대로 '발생할 수' 있으므로 발생이 가능한지 확인이 필요
+
+2. semaphore를 기다리는 waiter list를 priority순으로 내림차순 정렬하여 pop front시에 가장 높은 priority를 가진 thread가 나올 수 있도록 함
+
+3. condition variable에서 semaphore와 같이 리스트를 정렬함
+
+<hr>
+
+### Implement
+
+1. thread yield가 가능한지 try해보는 try_yield 함수 구현
+
+    ```c
+    /* thread.c */
+    void try_yield(void) {
+        if (!list_empty (&ready_list) && thread_current ()->priority < 
+        list_entry (list_front (&ready_list), struct thread, elem)->priority)
+            thread_yield ();
+    }
+    ```
+
+2. set_priority, thread_create, sema_up 함수에 try_yield() 추가
+
+    ```c
+    /* thread.c */
+    void
+    thread_set_priority (int new_priority) {
+        thread_current ()->priority = new_priority;
+
+        test_yield();
+    }
+
+    tid_t
+    thread_create (const char *name, int priority,
+            thread_func *function, void *aux) {
+        ...
+
+        test_yield();
+
+        return tid;
+    }
+
+
+    /* synch.c */
+    void
+    sema_up (struct semaphore *sema) {
+        enum intr_level old_level;
+
+        ASSERT (sema != NULL);
+
+        old_level = intr_disable ();
+        if (!list_empty (&sema->waiters)) {
+            thread_unblock (list_entry (list_pop_front (&sema->waiters),
+                        struct thread, elem));
+        }
+        sema->value++;
+        test_yield();
+        intr_set_level (old_level);
+    }
+    ```
+
+3. semaphore, cond wait list를 priority 기준 내림차순으로 정렬되도록 구현
+    ```c
+    /* synch.c */
+    void
+    sema_down (struct semaphore *sema) {
+        enum intr_level old_level;
+
+        ASSERT (sema != NULL);
+        ASSERT (!intr_context ());
+
+        old_level = intr_disable ();
+        while (sema->value == 0) {
+            list_insert_ordered (&sema->waiters, &thread_current ()->elem, dec_pri_function, NULL);
+            thread_block ();
+        }
+        sema->value--;
+        intr_set_level (old_level);
+    }
+
+    void
+    sema_up (struct semaphore *sema) {
+        enum intr_level old_level;
+
+        ASSERT (sema != NULL);
+
+        old_level = intr_disable ();
+        if (!list_empty (&sema->waiters)) {
+            list_sort(&sema->waiters, dec_pri_function, NULL);
+            thread_unblock (list_entry (list_pop_front (&sema->waiters),
+                        struct thread, elem));
+        }
+        sema->value++;
+        try_yield();
+        intr_set_level (old_level);
+    }
+
+    void
+    cond_wait (struct condition *cond, struct lock *lock) {
+        struct semaphore_elem waiter;
+
+        ASSERT (cond != NULL);
+        ASSERT (lock != NULL);
+        ASSERT (!intr_context ());
+        ASSERT (lock_held_by_current_thread (lock));
+
+        sema_init (&waiter.semaphore, 0);
+        list_insert_ordered (&cond->waiters, &waiter.elem, dec_pri_in_sema_function, NULL);
+        lock_release (lock);
+        sema_down (&waiter.semaphore);
+        lock_acquire (lock);
+    }
+
+
+    ```
+## Priority Donating
+
+### Key words
+
 1. priority donation
 
 2. priority inversion
@@ -176,19 +308,8 @@ categories: Jungle
 
 ### Problem
 
-1. thread yield는 언제 발생하는가?
+1. priority donation은 언제 발생하는가?
 
-2. priority donation은 언제 발생하는가?
+2. priority donation이 진행된 thread에서 set_priority함수는 어떻게 동작해야 하는가?
 
-3. priority donation이 진행된 thread에서 set_priority함수는 어떻게 동작해야 하는가?
-
-4. donated priority값을 list에 모두 담을 것인가? 최종적으로 받은 donated priority값 만을 저장 할 것인가?
-
-<hr>
-
-### Solution
-
-1. thread yield는 thread_create, set_priority, sema_up에서 발생할 수 있음
-    - 말 그대로 '발생할 수' 있으므로 발생이 가능한지 확인이 필요
-
-2. semaphore를 기다리는 waiter
+3. donated priority값을 list에 모두 담을 것인가? 최종적으로 받은 donated priority값 만을 저장 할 것인가?
