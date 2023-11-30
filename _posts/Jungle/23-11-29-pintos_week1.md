@@ -313,3 +313,115 @@ categories: Jungle
 2. priority donation이 진행된 thread에서 set_priority함수는 어떻게 동작해야 하는가?
 
 3. donated priority값을 list에 모두 담을 것인가? 최종적으로 받은 donated priority값 만을 저장 할 것인가?
+
+
+## ISSUE
+
+### 1. thread ticks가 오름차순으로 정렬되지 않음
+
+
+### 2. priority-donate-multiple fail
+
+```bash
+(priority-donate-multiple) begin
+(priority-donate-multiple) Main thread should have priority 32.  Actual priority: 32.
+(priority-donate-multiple) Main thread should have priority 33.  Actual priority: 33.
+(priority-donate-multiple) Thread b acquired lock b.
+(priority-donate-multiple) Thread b finished.
+(priority-donate-multiple) Thread b should have just finished.
+(priority-donate-multiple) Main thread should have priority 32.  Actual priority: 31.
+(priority-donate-multiple) Thread a acquired lock a.
+(priority-donate-multiple) Thread a finished.
+(priority-donate-multiple) Thread a should have just finished.
+(priority-donate-multiple) Main thread should have priority 31.  Actual priority: 31.
+(priority-donate-multiple) end
+```
+
+#### 원인
+
+![2.png](../../images/jungle/donate-multiple.png)
+
+<br>
+
+기존 처리 방식
+
+|Thread-L   | Origin priority   | Updated priority  | Donated Priority history |
+|-----      |-----              |-----              |- |
+| step 1    | 31           | 31           | |
+| step 2    | 31 | 32 ||
+| step 3    | 31 | 33 ||
+| step 4    | 31 | 31 ||
+| step 5    | 31 | 31 ||
+
+해결 방안
+
+|Thread-L   | Origin priority   | Updated priority  | Donated Priority history |
+|-----      |-----              |-----              |- |
+| step 1    | 31           | 31           | |
+| step 2    | 31 | 32 ||
+| step 3    | 31 | 33 |32|
+| step 4    | 31 | 32 ||
+| step 5    | 31 | 31 ||
+
+<br>
+
+위 표와 같이 donated priority에 관한 history가 필요
+
+#### 해결
+```c
+/* thread.h */
+
+// donation history를 저장할 list, elem 선언
+struct thread {
+    ...
+    struct list donation;				/* Record donated int */
+	struct list_elem donation_elem; 	/* Donation element */
+}
+
+/* thread.c */
+// donation list 초기화
+static void
+init_thread (struct thread *t, const char *name, int priority) {
+    list_init(&t->donation);
+}
+
+// current thread의 priority값 재설정시 donation history 유무에 따른 조건문 설정
+void
+thread_set_priority (int new_priority) {
+    enum intr_level old_level = intr_disable();
+	struct thread *curr = thread_current();
+	curr->origin_priority = new_priority;
+
+	if (list_empty(&curr->donation)) {
+		curr->priority = new_priority;
+	}
+	else if (curr->priority < new_priority){
+		curr->priority = new_priority;
+	}
+	
+	try_yield();
+
+	intr_set_level(old_level);
+}
+
+/* synch.c */
+// 아래 함수 수정
+void lock_aquire()
+void lock_release()
+```
+
+#### 결과
+```bash
+(priority-donate-multiple) begin
+(priority-donate-multiple) Main thread should have priority 32.  Actual priority: 32.
+(priority-donate-multiple) Main thread should have priority 33.  Actual priority: 33.
+(priority-donate-multiple) Thread b acquired lock b.
+(priority-donate-multiple) Thread b finished.
+(priority-donate-multiple) Thread b should have just finished.
+(priority-donate-multiple) Main thread should have priority 32.  Actual priority: 32.
+(priority-donate-multiple) Thread a acquired lock a.
+(priority-donate-multiple) Thread a finished.
+(priority-donate-multiple) Thread a should have just finished.
+(priority-donate-multiple) Main thread should have priority 31.  Actual priority: 31.
+(priority-donate-multiple) end
+```
