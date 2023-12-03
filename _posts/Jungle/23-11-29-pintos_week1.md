@@ -425,3 +425,24 @@ void lock_release()
 (priority-donate-multiple) Main thread should have priority 31.  Actual priority: 31.
 (priority-donate-multiple) end
 ```
+
+### 3-1. recent_cpu 값 계산 오류 - increase_recent_cpu
+
+![2.png](../../images/jungle/recent_cpu.png)
+
+### 3-2. recent_cpu 결과값 
+
+```bash
+2       11.50 >>> 6.40     Too big, by 2.60.
+4       17.60 >>> 12.60    Too big, by 2.50.
+6       23.49 >>> 18.61    Too big, by 2.38.
+8       29.21 >>> 24.44    Too big, by 2.27.
+10      34.74 >>> 30.08    Too big, by 2.16.
+12      40.10 >>> 35.54    Too big, by 2.06.
+14      45.30 >>> 40.83    Too big, by 1.97.
+16      50.33 >>> 45.96    Too big, by 1.87.
+```
+
+idle thread가 아닌 경우 처리를 해주지 않아 발생
+
+![2.png](../../images/jungle/refresh_recent_cpu.png)
