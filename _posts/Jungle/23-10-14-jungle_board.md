@@ -25,8 +25,8 @@ categories: Jungle
 * [Day 4 - Spanning Tree & Minimum Spanning Tree](https://1stapplepie.github.io/jungle/SpanningTree/)
 
 ### Pintos
-* [Pintos project1 PIL]()
-* [Pintos project2 PIL]()
+* [Pintos project1 PIL](https://1stapplepie.github.io/jungle/pintos_project1/)
+* [Pintos project2 PIL](https://1stapplepie.github.io/jungle/pintos_project2/)
 
 # Essay board
 
