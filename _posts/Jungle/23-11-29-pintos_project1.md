@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Pintos 1주차 WIL
+title: Pintos Project1 PIL
 categories: Jungle
 ---
 
