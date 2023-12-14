@@ -25,17 +25,9 @@
             </ul>
         <span class="nav__sub-title">Coding Test</span>
             <ul>
-                {% for category in site.categories %}
-                    {% if category[0] == "Programmers_py" %}
-                        <li><a href="https://github.com/1stApplePie/Programmers" class="">프로그래머스_python </a></li>
-                    {% endif %}
-                    {% if category[0] == "Programmers_cpp" %}
-                        <li><a href="https://github.com/1stApplePie/Programmers_cpp" class="">프로그래머스_C++ </a></li>
-                    {% endif %}
-                    {% if category[0] == "Beakjoon" %}
-                        <li><a href="https://github.com/1stApplePie/beakjoonRepo" class="">백준 </a></li>
-                    {% endif %}
-                {% endfor %}
+                <li><a href="https://github.com/1stApplePie/Programmers" class="">프로그래머스_python </a></li>
+                <li><a href="https://github.com/1stApplePie/Programmers_cpp" class="">프로그래머스_C++ </a></li>
+                <li><a href="https://github.com/1stApplePie/beakjoonRepo" class="">백준 </a></li>
             </ul>
         <span class="nav__sub-title">프로그래머스 자율주행 데브코스[5기]</span>
             <ul>
