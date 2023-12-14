@@ -27,10 +27,13 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "Programmers_py" %}
-                        <li><a href="https://1stapplepie.github.io/programmers_py/README/" class="">프로그래머스_python ({{category[1].size}})</a></li>
+                        <li><a href="https://github.com/1stApplePie/Programmers" class="">프로그래머스_python </a></li>
                     {% endif %}
                     {% if category[0] == "Programmers_cpp" %}
-                        <li><a href="https://1stapplepie.github.io/programmers_cpp/README/" class="">프로그래머스_C++ ({{category[1].size}})</a></li>
+                        <li><a href="https://github.com/1stApplePie/Programmers_cpp" class="">프로그래머스_C++ </a></li>
+                    {% endif %}
+                    {% if category[0] == "Beakjoon" %}
+                        <li><a href="https://github.com/1stApplePie/beakjoonRepo" class="">백준 </a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
