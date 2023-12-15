@@ -109,8 +109,8 @@ program name이 parsing이 제대로 되지 않는다.<br>
 thread name이 parsing이 제대로 되지 않는다.<br>
 
 ```c
-/* process.c process_create_initd
-char *n_copy[strlen(file_name)+1];
+/* process.c process_create_initd*/
+    char *n_copy[strlen(file_name)+1];
 	char *n_ptr;
 	strlcpy (n_copy, file_name, PGSIZE);
 
