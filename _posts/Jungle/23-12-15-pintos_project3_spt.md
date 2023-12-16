@@ -74,6 +74,44 @@ struct page {
 	struct hash_elem hash_elem; /* Hash table element. */
     ...
 }
+
+/* Returns a hash value for page p. */
+unsigned
+page_hash (const struct hash_elem *p_, void *aux UNUSED) {
+  const struct page *p = hash_entry (p_, struct page, page_elem);
+  return hash_bytes (&p->va, sizeof p->va);
+}
+
+/* Returns true if page a precedes page b. */
+bool
+page_less (const struct hash_elem *a_,
+           const struct hash_elem *b_, void *aux UNUSED) {
+  const struct page *a = hash_entry (a_, struct page, page_elem);
+  const struct page *b = hash_entry (b_, struct page, page_elem);
+
+  return a->va < b->va;
+}
+
+/* Returns the page containing the given virtual address, or a null pointer if no such page exists. */
+/* Find VA from spt and return page. On error, return NULL. */
+struct page *
+spt_find_page (struct supplemental_page_table *spt UNUSED, void *va UNUSED) {
+	struct page *page;
+	/* TODO: Fill this function. */
+	struct hash_elem *e;
+
+	page->va = va;
+	e = hash_find (&spt->spt_ht, &page->page_elem);
+	return e != NULL ? hash_entry (e, struct page, page_elem) : NULL;
+}
+
+/* Insert PAGE into spt with validation. */
+bool
+spt_insert_page (struct supplemental_page_table *spt UNUSED,
+		struct page *page UNUSED) {
+	/* TODO: Fill this function. */
+	return hash_insert (&spt, &page->page_elem) ? true : false;
+}
 ```
 
 제공받은 함수를 사용하기 위해 page sturct에 hash_elem을 추가해주었다.
@@ -87,4 +125,60 @@ supplemental_page_table_init (struct supplemental_page_table *spt UNUSED) {
 
 첫 구현 함수인 supplemental_page_table_init이다. 선언한 hash table을 넣어주고, page_hash와 page_less는 위에서 말한 git-book에 있는 함수들을 사용하였다.
 
-다음 순서를 찾기 위해 args-none test case를 디버깅해본 결과 vm_alloc_page_with_initializer 함수 구현이 필요했다.
+## vm_alloc_page_with_initializer
+
+다음 순서를 찾기 위해 args-none test case를 디버깅해본 결과 vm_alloc_page_with_initializer 함수 구현이 필요했다.<br>
+해당 함수에 대한 구현 설명은 gitbook - Anonymous page 부분에 실려 있다.
+
+Implement vm_alloc_page_with_initializer(). You should fetch an appropriate initializer according to the passed vm_type and call uninit_new with it.
+
+```c
+bool vm_alloc_page_with_initializer (enum vm_type type, void *va,
+        bool writable, vm_initializer *init, void *aux);
+```
+
+Create an uninitialized page with the given type. The swap_in handler of uninit page automatically initializes the page according to the type, and calls INIT with given AUX. Once you have the page struct, insert the page into the process's supplementary page table. Using VM_TYPE macro defined in vm.h can be handy.
+
+
+The page fault handler follows its call chain, and finally reaches uninit_intialize when it calls swap_in. We gives the complete implementation for it. Although, you may need to modify the uninit_initialize according to your design.
+
+먼저 함수에서 입력으로 받은 인자들에 대해 살펴보자.
+
+1. type
+
+	virtual memory type에 관한 열거형 변수이다. 
+	```c
+	enum vm_type {
+		/* page not initialized */
+		VM_UNINIT = 0,
+		/* page not related to the file, aka anonymous page */
+		VM_ANON = 1,
+		/* page that realated to the file */
+		VM_FILE = 2,
+		/* page that hold the page cache, for project 4 */
+		VM_PAGE_CACHE = 3,
+
+		/* Bit flags to store state */
+
+		/* Auxillary bit flag marker for store information. You can add more
+		* markers, until the value is fit in the int. */
+		VM_MARKER_0 = (1 << 3),
+		VM_MARKER_1 = (1 << 4),
+
+		/* DO NOT EXCEED THIS VALUE. */
+		VM_MARKER_END = (1 << 31),
+	};
+	```
+
+	각 상수들에 대한 설명은 주석으로 잘 나타나 있는 듯 하다.
+
+2. upage
+
+	새로운 페이지가 할당 될 가상 주소
+3. writable
+
+	페이지 쓰기 권한에 대한 값
+4. init
+
+	페이지를 초기화하는 데 사용할 함수
+
