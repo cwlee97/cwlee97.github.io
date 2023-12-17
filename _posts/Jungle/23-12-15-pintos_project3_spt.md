@@ -182,7 +182,7 @@ The page fault handler follows its call chain, and finally reaches uninit_intial
 
 	페이지를 초기화하는 데 사용할 함수
 
-새로 page를 만들어 spt에 추가하면 되는데, 해당 함수 구현만으로는 아직 initializer부분이 부족한 것 같다. type을 디버깅해본 결과 VM_ANON이 들어온다. TODO를 읽은대로 구현 후 anon page 구현을 이어 나갈 예정이다.
+새로 page를 만들어 spt에 추가하면 되는데, 해당 함수 구현만으로는 아직 initializer부분이 부족한 것 같다. 첫 번째 문제는 함수에 인자로 들어오는 vm_initializer - lazy_load_segment가 구현이 되어있지 않다. 이 부분부터 이어나가자.
 
 ```c
 /* Create the pending page object with initializer. If you want to create a
