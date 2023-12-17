@@ -110,7 +110,7 @@ bool
 spt_insert_page (struct supplemental_page_table *spt UNUSED,
 		struct page *page UNUSED) {
 	/* TODO: Fill this function. */
-	return hash_insert (&spt, &page->page_elem) ? true : false;
+	return hash_insert (&spt->spt_ht, &page->page_elem) ? true : false;
 }
 ```
 
@@ -182,3 +182,50 @@ The page fault handler follows its call chain, and finally reaches uninit_intial
 
 	페이지를 초기화하는 데 사용할 함수
 
+새로 page를 만들어 spt에 추가하면 되는데, 해당 함수 구현만으로는 아직 initializer부분이 부족한 것 같다. type을 디버깅해본 결과 VM_ANON이 들어온다. TODO를 읽은대로 구현 후 anon page 구현을 이어 나갈 예정이다.
+
+```c
+/* Create the pending page object with initializer. If you want to create a
+ * page, do not create it directly and make it through this function or
+ * `vm_alloc_page`. */
+bool
+vm_alloc_page_with_initializer (enum vm_type type, void *upage, bool writable,
+		vm_initializer *init, void *aux) {
+
+	ASSERT (VM_TYPE(type) != VM_UNINIT)
+
+	struct supplemental_page_table *spt = &thread_current ()->spt;
+
+	/* Check wheter the upage is already occupied or not. */
+	if (spt_find_page (spt, upage) == NULL) {
+		/* TODO: Create the page, fetch the initialier according to the VM type,
+		 * TODO: and then create "uninit" page struct by calling uninit_new. You
+		 * TODO: should modify the field after calling the uninit_new. */
+		struct page *new_page = (struct page *)malloc(sizeof(struct page));;
+		if (new_page == NULL)
+            goto err;
+
+		void *va = pg_round_down(upage);
+
+		switch (VM_TYPE(type)) {
+            case VM_ANON:
+                uninit_new(new_page, va, init, type, aux, anon_initializer);
+                break;
+            case VM_FILE:
+                uninit_new(new_page, va, init, type, aux, file_backed_initializer);
+                break;
+            default:
+                NOT_REACHED();
+                break;
+        }
+
+		/* TODO: Insert the page into the spt. */
+		if (!spt_insert_page(spt, new_page)) {
+			goto err;
+		}
+	}
+	return true;
+err:
+	return false;
+}
+```
