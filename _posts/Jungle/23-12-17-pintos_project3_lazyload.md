@@ -219,7 +219,7 @@ setup_stack (struct intr_frame *if_) {
         struct page *page = spt_find_page(&thread_current()->spt, stack_bottom);
 
         if (vm_claim_page(stack_bottom))
-            if_->rsp = (uintptr_t)stack_bottom;
+            if_->rsp = USER_STACK;
     }
 
     return success;
