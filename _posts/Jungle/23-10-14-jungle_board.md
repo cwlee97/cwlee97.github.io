@@ -29,6 +29,7 @@ categories: Jungle
 * [Pintos project2 PIL](https://1stapplepie.github.io/jungle/pintos_project2/)
 * [Pintos project3 supplement page table PIL](https://1stapplepie.github.io/jungle/pintos_project3_spt/)
 * [Pintos project3 lazy load PIL](https://1stapplepie.github.io/jungle/pintos_project3_lazyload/)
+* [Pintos project3 Error](https://1stapplepie.github.io/jungle/pintos_project3_error/)
 
 # Essay board
 
