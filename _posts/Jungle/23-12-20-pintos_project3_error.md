@@ -41,9 +41,7 @@ categories: Jungle
 		
 		// Error 1
 		// pml4_set_page(&curr->pml4, page->va, frame->kva, page->writable);
-		if (pml4_set_page(curr->pml4, page->va, frame->kva, page->writable) == false)
-			return false;
-
+		pml4_set_page(curr->pml4, page->va, frame->kva, page->writable)
 		...
 	}
 	```
@@ -114,4 +112,42 @@ categories: Jungle
 	}
 	```
 
-3. 
+3. file length & length
+	```c
+	/* Do the mmap */
+	void *
+	do_mmap (void *addr, size_t length, int writable,
+			struct file *file, off_t offset) {
+		// length bytes the file open as fd starting from offset byte 
+		// into the process's virtual address space at addr
+
+		// You should use the file_reopen function to obtain a separate and 
+		// independent reference to the file for each of its mappings
+		struct file *reopen_file = file_reopen(file);
+		if (reopen_file == NULL) {
+			return NULL;
+		}
+
+		// Memory-mapped pages should be also allocated in a lazy manner 
+		// just like anonymous pages. 
+		// You can use vm_alloc_page_with_initializer or 
+		// vm_alloc_page to make a page object.
+		size_t read_bytes = file_length(reopen_file) < length ? file_length(reopen_file) : length;
+		size_t zero_bytes = file_length(reopen_file) < length ? PGSIZE - (file_length(reopen_file) % PGSIZE) : PGSIZE - (length % PGSIZE);
+		void *upage = addr;
+	```
+
+	file length보다 긴 길이의 mmap 요청이 있을 때, 나머지 page byte를 0으로 채우도록 설정
+
+4. args parsing 수정
+	기존 stack pointer만 줄였던 코드에서 stack pointer가 argv 배열의 NULL 인덱스 시작 주소를 가리키도록 변경
+
+	```c
+	for (int i = argc; i >= 0; i--) {
+			if_->rsp -= sizeof(char *);
+			// if (i == argc) {
+			// 	continue;
+			// }
+			memcpy(if_->rsp, &(argv[i]), sizeof(char *));
+		}
+	```
