@@ -133,7 +133,7 @@ categories: Jungle
 		// You can use vm_alloc_page_with_initializer or 
 		// vm_alloc_page to make a page object.
 		size_t read_bytes = file_length(reopen_file) < length ? file_length(reopen_file) : length;
-		size_t zero_bytes = file_length(reopen_file) < length ? PGSIZE - (file_length(reopen_file) % PGSIZE) : PGSIZE - (length % PGSIZE);
+		size_t zero_bytes = pg_round_up(length) - read_bytes;
 		void *upage = addr;
 	```
 
