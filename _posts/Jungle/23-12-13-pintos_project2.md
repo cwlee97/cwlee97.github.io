@@ -6,7 +6,7 @@ categories: Jungle
 
 ## Pintos project 2 - args parsing, system call
 
-전체 코드는 https://github.com/1stApplePie/pintos-kaist 브랜치를 통해 확인할 수 있다.
+전체 코드는 https://github.com/cwlee97/pintos-kaist 브랜치를 통해 확인할 수 있다.
 
 ### args-parsing
 

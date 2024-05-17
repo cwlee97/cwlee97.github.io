@@ -53,7 +53,7 @@ for dir in dir_list:
         n_name = re.sub('\s', '-', name)
         print(n_name)
         with open(md_path, 'a', encoding = "UTF-8") as f:
-            f.write('* [{}](https://1stapplepie.github.io/programmers_py/{}/)\n'.format(name, n_name))
+            f.write('* [{}](https://cwlee97.github.io/programmers_py/{}/)\n'.format(name, n_name))
             f.close()
 
 ## Edit Solution
